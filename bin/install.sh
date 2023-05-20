@@ -66,9 +66,12 @@ printf "\n"
 
 # Ansbible
 info "Installing Ansible"
-pip3 install --upgrade pip
-pip3 install ansible
-success "Ansible installed successfully!"
+if brew list ansible &>/dev/null; then
+  success "Ansible already installed, skipping..."
+else
+  brew install ansible
+  success "Ansible installed successfully!"
+fi
 
 printf "\n"
 
