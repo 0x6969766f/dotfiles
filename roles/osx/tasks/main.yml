@@ -292,6 +292,7 @@
     domain: com.apple.dock
     key: persistent-apps
     type: array
+    value: []
     state: present
 
 - name: "[ osx ] Show only open applications in dock"
