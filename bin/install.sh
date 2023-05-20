@@ -68,11 +68,10 @@ fi
 mkdir -p $DOTFILES
 git clone https://github.com/0x6969766f/dotfiles.git $DOTFILES
 cd $DOTFILES
-
-printf $(pwd)
-printf $DOTFILES
-
+printf "my dir is $(pwd)"
+printf "my stuff is in ${DOTFILES}"
 git pull origin main
+success "Dotfiles fetched successfully!"
 
 # Playbook
 info "Running playbook..."
