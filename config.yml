@@ -2,7 +2,7 @@
 - name: Setup
   hosts: local
 
-  vars_files: ["package.yml"]
+  vars_files: ["packages.yml"]
 
   roles:
     - role: geerlingguy.mac.homebrew
@@ -17,5 +17,5 @@
     - role: mas
       tags: ["mas"]
 
-    - role: macos
-      tags: ["macos"]
+    - role: osx
+      tags: ["osx"]

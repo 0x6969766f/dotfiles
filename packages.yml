@@ -13,7 +13,6 @@ brew_casks:
   - arc
   - bartender
   - firefox
-  - hazeover
   - notion
   - rectangle
   - raycast
@@ -32,5 +31,6 @@ brew_casks:
   - font-jetbrains-mono-nerd-font
 
 mas_packages:
+  - 430798174 # hazeover
   - 418412301 # clean
   # - 937984704 # amphetamine
