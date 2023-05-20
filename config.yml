@@ -11,6 +11,9 @@
     - role: brew
       tags: ["brew"]
 
+    - role: zsh
+      tags: ["zsh"]
+
     - role: dotfiles
       tags: ["dotfiles"]
 
