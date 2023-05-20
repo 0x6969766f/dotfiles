@@ -72,11 +72,9 @@ info "Installing Ansible"
 #   brew install ansible && success "Ansible installed successfully!"
 # fi
 if ! [ -x "$(command -v ansible)" ]; then
-  echo "Ansible missing - please install manually:"
-  echo
-  echo "$ sudo pip3 install --upgrade pip"
-  echo "$ pip3 install ansible"
-  exit 1
+  pip3 install --upgrade pip
+  pip3 install ansible
+  success "Ansible installed successfully!"
 fi
 
 printf "\n"
