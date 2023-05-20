@@ -302,7 +302,7 @@
     value: true
     state: present
 
-- name: "[ osx ] Disable top-left hot-corner":
+- name: "[ osx ] Disable top-left hot-corner"
   osx_defaults:
     domain: com.apple.dock
     key: wvous-tl-corner
