@@ -75,9 +75,8 @@ fi
 
 printf "\n"
 
-
 # Dotfiles
-Info "Setting up directories..."
+info "Setting up directories..."
 mkdir -p $HOME/Archives
 mkdir -p $HOME/Development
 mkdir -p $HOME/Screenshots
