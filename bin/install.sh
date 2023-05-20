@@ -25,7 +25,7 @@ printf "Hello $(whoami)! Let's get you set up.\n\n"
 # TODO: Should prompt pre-installation questions here!
 
 # Command Line Tools
-info "Installing macOS Command Line Tools..."
+info "Installing macOS Command Line Tools"
 if [[ ! -x /usr/bin/gcc ]]; then
   xcode-select --install
   success "Command Line tools installed successfully!"
@@ -36,7 +36,7 @@ fi
 printf "\n"
 
 # Homebrew
-info "Installing Homebrew..."
+info "Installing Homebrew"
 which -s brew
 if [[ $? != 0 ]] ; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -50,7 +50,7 @@ fi
 printf "\n"
 
 # Ansbible
-info "Installing Ansible..."
+info "Installing Ansible"
 if brew list ansible &> /dev/null; then
   success "Ansible already installed! skipping..."
 else
@@ -60,13 +60,18 @@ fi
 printf "\n"
 
 # Dotfiles
-if [[ ! -d $DOTFILES ]]; then
-  mkdir -p $DOTFILES
-  git clone https://github.com/0x6969766f/dotfiles.git $DOTFILES
+info "Fetching dotfiles..."
+if [[ -d $DOTFILES ]]; then
+  rm -rf $DOTFILES
 fi
 
+mkdir -p $DOTFILES
+git clone https://github.com/0x6969766f/dotfiles.git $DOTFILES
 cd $DOTFILES
-info "Fetching dotfiles..."
+
+printf $(pwd)
+printf $DOTFILES
+
 git pull origin main
 
 # Playbook
