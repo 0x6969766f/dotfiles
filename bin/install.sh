@@ -75,7 +75,7 @@ fi
 
 printf "\n"
 
-# Dotfiles
+# Directories
 info "Setting up directories..."
 mkdir -p $HOME/Archives
 mkdir -p $HOME/Development
@@ -86,6 +86,9 @@ fi
 mkdir -p $DOTFILES
 success "Directories created successfully!"
 
+printf "\n"
+
+# Dotfiles
 info "Fetching dotfiles..."
 git clone https://github.com/0x6969766f/dotfiles.git $DOTFILES
 cd $DOTFILES

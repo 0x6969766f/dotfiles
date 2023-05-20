@@ -110,3 +110,226 @@
     type: string
     value: "~/${HOME}/Screenshots"
     state: present
+
+- name: "[ osx ] Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: type
+    type: string
+    value: "png"
+    state: present
+
+- name: "[ osx ] Set home as the default location for new Finder windows"
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: "PfHm"
+    state: present
+
+- name: "[ osx ] Show hard drives on desktop"
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowHardDrivesOnDesktop
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Show external hard drives on desktop"
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowExternalHardDrivesOnDesktop
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Show removable media on desktop"
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowRemovableMediaOnDesktop
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Show connected servers on desktop"
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowMountedServersOnDesktop
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Show hidden files"
+  osx_defaults:
+    domain: com.apple.finder
+    key: AppleShowAllFiles
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Show filename extensions"
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Show status bar in Finder"
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Show path bar in Finder"
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Allow text selection in Quick Look"
+  osx_defaults:
+    domain: com.apple.finder
+    key: QLEnableTextSelection
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Search current directory by default"
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXDefaultSearchScope
+    type: string
+    value: "SCcf"
+    state: present
+
+- name: "[ osx ] Enable spring loading for directories"
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.springing.enabled
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Remove spring loading delay for directories"
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.springing.delay
+    type: float
+    value: 0.1
+    state: present
+
+- name: "[ osx ] Avoid creating .DS_Store files on network volumes"
+  osx_defaults:
+    domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Use column view in Finder"
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: "clmv"
+    state: present
+
+- name: "[ osx ] Show Library folder in Finder"
+  osx_defaults:
+    domain: chflags
+    key: nohidden
+    type: string
+    value: "~/Library"
+    state: present
+
+- name: "[ osx ] Show Volumes folder in Finder"
+  osx_defaults:
+    domain: chflags
+    key: nohidden
+    type: string
+    value: "/Volumes"
+    state: present
+
+- name: "[ osx ] Set dock icon size"
+  osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 40
+    state: present
+
+- name: "[ osx ] Set dock autohide"
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Set dock autohide delay"
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide-time-modifier
+    type: float
+    value: 0.7
+    state: present
+
+- name: "[ osx ] Disable recent apps from dock"
+  osx_defaults:
+    domain: com.apple.dock
+    key: "show-recents"
+    type: bool
+    value: false
+    state: present
+
+- name: "[ osx ] Remove default applications from dock"
+  osx_defaults:
+    domain: com.apple.dock
+    key: persistent-apps
+    type: array-add
+    state: present
+
+- name: "[ osx ] Show only open applications in dock"
+  osx_defaults:
+    domain: com.apple.dock
+    key: static-only
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Disable top-left hot-corner":
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-tl-corner
+    type: int
+    value: 0
+    state: present
+
+- name: "[ osx ] Disable top-right hot-corner"
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-tr-corner
+    type: int
+    value: 0
+    state: present
+
+- name: "[ osx ] Disable bottom-left hot-corner"
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-bl-corner
+    type: int
+    value: 0
+    state: present
+
+- name: "[ osx ] Disable bottom-right hot-corner"
+  osx_defaults:
+    domain: com.apple.dock
+    key: wvous-br-corner
+    type: int
+    value: 0
+    state: present
