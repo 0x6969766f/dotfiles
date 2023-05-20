@@ -20,6 +20,7 @@ cask_packages:
   - slack
   - spotify
   - zoom
+  # development
   - figma
   - insomnia
   - iterm2
@@ -35,6 +36,3 @@ mas_packages:
   - 937984704 # amphetamine
   - 418412301 # clean
   - 430798174 # hazeover
-
-pip_packages:
-  # - ...
