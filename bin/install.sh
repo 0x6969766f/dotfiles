@@ -24,16 +24,30 @@ printf "Hello $(whoami)! Let's get you set up.\n\n"
 
 # TODO: Should prompt pre-installation questions here!
 
+# read -p "Did you created an ssh key and added it to all services? press 'Y' or 'y' to continue " -n 1 -r
+
+# if [[ $REPLY =~ ^[Yy]$ ]]; then
+#   source ./macos.sh
+# fi
+
 # Command Line Tools
 info "Installing macOS Command Line Tools"
 if [[ ! -x /usr/bin/gcc ]]; then
   xcode-select --install
+  xcode-select --switch /Library/Developer/CommandLineTools
   success "Command Line tools installed successfully!"
 else
   success "Command Line Tools already installed, skipping..."
 fi
 
 printf "\n"
+
+# Rosetta
+# Info "Installing Rosetta"
+# /usr/bin/pgrep -q oahd && echo 'Rosetta already installed' || /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+# success "Rosetta installed successfully!"
+
+# printf "\n"
 
 # Homebrew
 info "Installing Homebrew"
@@ -44,7 +58,8 @@ if [[ $? != 0 ]] ; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   success "Homebrew installed successfully!"
 else
-  success "Homebrew already installed, updating..." && brew update
+  success "Homebrew already installed, updating..."
+  brew update && brew upgrade
 fi
 
 printf "\n"
@@ -75,7 +90,14 @@ printf "\n"
 
 # Playbook
 info "Running playbook..."
-#ANSIBLE_CONFIG=./ansible/ansible.cfg ansible-playbook -i ansible/hosts ansible/dotfiles.yml -v
+
+# Get full directory path of this wrapper
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+# Install Ansible requirements like roles and collections
+ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-galaxy install -r ${SCRIPTPATH}/requirements.yml &>/dev/null
+# Execute the Ansible playbook
+ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-playbook ${SCRIPTPATH}/config.yml --ask-become-pass --tags "${tags}"
+
 success "Done!"
 
 printf "\n" && exit 0

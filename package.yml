@@ -1,0 +1,36 @@
+---
+brew_taps:
+  - homebrew/cask-fonts
+
+brew_packages:
+  - ansible
+  - mas
+
+brew_casks:
+  # applications
+  - 1password
+  - alacritty
+  - arc
+  - bartender
+  - firefox
+  - hazeover
+  - notion
+  - rectangle
+  - raycast
+  - slack
+  - spotify
+  - zoom
+  - figma
+  - insomnia
+  - iterm2
+  - sourcetree
+  - tableplus
+  - viscosity
+  - visual-studio-code
+  # fonts
+  - font-meslo-lg-nerd-font
+  - font-jetbrains-mono-nerd-font
+
+mas_packages:
+  - 418412301 # clean
+  # - 937984704 # amphetamine

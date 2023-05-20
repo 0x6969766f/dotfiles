@@ -1,0 +1,21 @@
+---
+- name: Setup
+  hosts: local
+
+  vars_files: ["package.yml"]
+
+  roles:
+    - role: geerlingguy.mac.homebrew
+      tags: ["brew"]
+
+    - role: brew
+      tags: ["brew"]
+
+    - role: dotfiles
+      tags: ["dotfiles"]
+
+    - role: mas
+      tags: ["mas"]
+
+    - role: macos
+      tags: ["macos"]
