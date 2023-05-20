@@ -33,7 +33,7 @@ else
   success "Command Line Tools already installed, skipping..."
 fi
 
-echo "\n"
+printf "\n"
 
 # Homebrew
 info "Installing Homebrew..."
@@ -47,7 +47,7 @@ else
   success "Homebrew already installed, updating..." && brew update
 fi
 
-echo "\n"
+printf "\n"
 
 # Ansbible
 info "Installing Ansible..."
@@ -57,7 +57,7 @@ else
   brew install ansible && success "Ansible installed successfully!"
 fi
 
-echo "\n"
+printf "\n"
 
 # Dotfiles
 if [[ ! -d $DOTFILES ]]; then
