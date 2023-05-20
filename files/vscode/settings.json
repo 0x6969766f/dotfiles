@@ -1,0 +1,32 @@
+{
+  "atomKeymap.promptV3Features": true,
+
+  "editor.cursorStyle": "block",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineNumbers": "relative",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.scrollBeyondLastLine": false,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "wordWrapColumn",
+
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+
+  "search.showLineNumbers": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "vim.smartRelativeLine": true,
+  "window.zoomLevel": 1,
+
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.sideBar.location": "right",
+  "editor.fontFamily": "JetBrainsMonoNFM-Regular, Menlo, Monaco, 'Courier New', monospace"
+}

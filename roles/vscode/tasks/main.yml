@@ -1,0 +1,5 @@
+---
+- name: "[ vscode ] Install extensions"
+  vscode_install:
+    name: "{{ item }}"
+  loop: "{{ vscode_packages }}"
