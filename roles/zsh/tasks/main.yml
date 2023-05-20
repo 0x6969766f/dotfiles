@@ -13,6 +13,3 @@
 
 - name: "[ zsh ] Restart zsh"
   ansible.builtin.shell: exec zsh
-
-- name: "[ zsh ] Configure p10k"
-  ansible.builtin.shell: p10k configure
