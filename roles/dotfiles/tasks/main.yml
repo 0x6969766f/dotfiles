@@ -16,5 +16,6 @@
     src: "{{ ansible_env.PWD }}/files/dotfiles/{{ item }}"
     path: "~/.{{ item }}"
     state: link
+    force: yes
   with_items:
     - "{{ files_to_symlink.stdout_lines }}"
