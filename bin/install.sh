@@ -94,7 +94,7 @@ SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 # Install Ansible requirements like roles and collections
 ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-galaxy install -r ${SCRIPTPATH}/requirements.yml &>/dev/null
 # Execute the Ansible playbook
-ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-playbook ${SCRIPTPATH}/config.yml --ask-become-pass --tags "${tags}"
+ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-playbook ${SCRIPTPATH}/config.yml --ask-become-pass --tags "all"
 
 success "Done!"
 
