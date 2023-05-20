@@ -1,13 +1,20 @@
 ---
 - name: "[ zsh ] Install oh-my-zsh"
-  ansible.builtin.shell: |
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   force: true
 
 - name: "[ zsh ] Install powerlevel10k"
-  ansible.builtin.shell: |
-    brew install romkatv/powerlevel10k/powerlevel10k \
-    && echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc \
-    && exec zsh \
-    p10k configure
+  command: brew install romkatv/powerlevel10k/powerlevel10k
+  force: true
+
+- name: "[ zsh ] Source powerlevel10k"
+  command: echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+  force: true
+
+- name: "[ zsh ] Restart zsh"
+  command: exec zsh
+  force: true
+
+- name: "[ zsh ] Configure p10k"
+  command: p10k configure
   force: true
