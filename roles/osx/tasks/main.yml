@@ -1,5 +1,5 @@
 ---
-- name: "[ macOS] Set ComputerName"
+- name: "[ osx ] Set ComputerName"
   osx_defaults:
     domain: scutil
     key: ComputerName
@@ -7,7 +7,7 @@
     value: "0x6969766f"
     state: present
 
-- name: "[ macOS] Set HostName"
+- name: "[ osx ] Set HostName"
   osx_defaults:
     domain: scutil
     key: HostName
@@ -15,7 +15,7 @@
     value: "0x6969766f"
     state: present
 
-- name: "[ macOS] Set LocalHostName"
+- name: "[ osx ] Set LocalHostName"
   osx_defaults:
     domain: scutil
     key: LocalHostName
@@ -23,9 +23,9 @@
     value: "0x6969766f"
     state: present
 
-- name: "[ macOS] Set NetBIOSName"
+- name: "[ osx ] Set NetBIOSName"
   osx_defaults:
-    domain: /Library/Preferences/SystemConfiguration/com.apple.smb.server
+    domain: ~/Library/Preferences/SystemConfiguration/com.apple.smb.server
     key: NetBIOSName
     type: string
     value: "0x6969766f"
