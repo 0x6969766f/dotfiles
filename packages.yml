@@ -6,6 +6,7 @@ brew_taps:
 brew_packages:
   - ansible
   - mas
+  - zplug
 
 cask_packages:
   # applications

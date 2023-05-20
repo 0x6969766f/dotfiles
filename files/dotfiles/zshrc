@@ -1,0 +1,19 @@
+# Enable colors
+autoload -U colors && colors
+
+# zplug initalization
+export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# Load plugins
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+
+# Install packages that have not been installed yet
+if ! zplug check --verbose; then
+    zplug install
+fi
+
+# Load all modules
+zplug load

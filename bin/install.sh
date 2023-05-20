@@ -109,6 +109,14 @@ ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-playbook ${SCRIPTPATH}/config.y
 
 success "Done!"
 
+# Restart affected applications if `--no-restart` flag is not present.
+if [[ ! ($* == *--no-restart*) ]]; then
+  for app in "cfprefsd" "Dock" "Finder" "SystemUIServer" "Terminal" "iTerm2"; do
+    killall "${app}" > /dev/null 2>&1
+  done
+fi
+
+success "Please log out and log back in to make all settings take effect.\n"
 printf "\n" && exit 0
 
 

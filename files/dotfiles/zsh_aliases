@@ -1,0 +1,7 @@
+# Be nice
+alias please="sudo "
+
+# Easier navigation: .., ..., ....
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."

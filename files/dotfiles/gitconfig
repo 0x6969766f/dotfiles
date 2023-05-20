@@ -1,5 +1,6 @@
 [user]
   name = Iivari Leinonen
+  email = iivari.leinonen@gmail.com
 
 [includeIf "gitdir:~/Development/personal/"]
   name = 0x6969766f
