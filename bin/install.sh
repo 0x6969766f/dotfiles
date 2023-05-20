@@ -109,6 +109,10 @@ ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-playbook ${SCRIPTPATH}/config.y
 
 success "Done!"
 
+# Oh My Zsh
+source ./ohmy.sh
+source ./p10k.sh
+
 # Restart affected applications if `--no-restart` flag is not present.
 if [[ ! ($* == *--no-restart*) ]]; then
   for app in "cfprefsd" "Dock" "Finder" "SystemUIServer" "Terminal" "iTerm2"; do
