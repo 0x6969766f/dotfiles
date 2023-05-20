@@ -30,3 +30,11 @@
     type: string
     value: "0x6969766f"
     state: present
+
+- name: "[ osx ] Disable boot sound"
+  osx_defaults:
+    domain: nvram
+    key: SystemAudioVolume
+    type: string
+    value: " "
+    state: present
