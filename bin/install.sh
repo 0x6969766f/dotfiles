@@ -66,10 +66,17 @@ printf "\n"
 
 # Ansbible
 info "Installing Ansible"
-if brew list ansible &> /dev/null; then
-  success "Ansible already installed! skipping..."
-else
-  brew install ansible && success "Ansible installed successfully!"
+# if brew list ansible &> /dev/null; then
+#   success "Ansible already installed! skipping..."
+# else
+#   brew install ansible && success "Ansible installed successfully!"
+# fi
+if ! [ -x "$(command -v ansible)" ]; then
+  echo "Ansible missing - please install manually:"
+  echo
+  echo "$ sudo pip3 install --upgrade pip"
+  echo "$ pip3 install ansible"
+  exit 1
 fi
 
 printf "\n"

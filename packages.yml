@@ -1,5 +1,6 @@
 ---
 brew_taps:
+  - homebrew/cask-versions
   - homebrew/cask-fonts
 
 brew_packages:

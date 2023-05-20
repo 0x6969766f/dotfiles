@@ -1,5 +1,7 @@
 Mmmm... files
 
 ```bash
-curl -L https://raw.github.com/0x6969766f/dotfiles/main/bin/install.sh | bash
+curl https://raw.githubusercontent.com/0x6969766f/dotfiles/main/bin/install.sh --output install.sh
+chmod +x install.sh
+sh install.sh
 ```

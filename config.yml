@@ -19,3 +19,6 @@
 
     - role: osx
       tags: ["osx"]
+
+    - role: pip
+      tags: ["pip"]
