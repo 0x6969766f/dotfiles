@@ -70,3 +70,43 @@
     type: bool
     value: false
     state: present
+
+- name: "[ osx ] Enable tap to click"
+  osx_defaults:
+    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+    key: Clicking
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Increase sound quality for Bluetooth headphones/headsets"
+  osx_defaults:
+    domain: com.apple.BluetoothAudioAgent
+    key: "Apple Bitpool Min (editable)"
+    type: int
+    value: 40
+    state: present
+
+- name: "[ osx ] Require password immediately after sleep or screen saver begins"
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPassword
+    type: int
+    value: 1
+    state: present
+
+- name: "[ osx ] Set require password window delay to 0"
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPasswordDelay
+    type: int
+    value: 0
+    state: present
+
+- name: "[ osx ] Set custom screenshot directory"
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: "~/${HOME}/Screenshots"
+    state: present
