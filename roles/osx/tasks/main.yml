@@ -38,3 +38,35 @@
     type: string
     value: " "
     state: present
+
+- name: "[ osx ] Expand save panel by default"
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSNavPanelExpandedStateForSaveMode
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Expand print panel by default"
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: PMPrintingExpandedStateForPrint
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Automatically quit printer app once the print jobs complete"
+  osx_defaults:
+    domain: com.apple.print.PrintingPrefs
+    key: "Quit When Finished"
+    type: bool
+    value: true
+    state: present
+
+- name: "[ osx ] Save to disk (not to iCloud) by default"
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSDocumentSaveNewDocumentsToCloud
+    type: bool
+    value: false
+    state: present
