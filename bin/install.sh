@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES=$HOME/Development/dotfiles
+DOTFILES="${HOME}/Development/dotfiles"
 
 info () {
   printf "\r[ \033[00;34m..\033[0m ] $1\n"
@@ -76,10 +76,8 @@ printf "\n"
 # Playbook
 info "Running playbook..."
 #ANSIBLE_CONFIG=./ansible/ansible.cfg ansible-playbook -i ansible/hosts ansible/dotfiles.yml -v
-
-printf $(pwd)
-
 success "Done!"
-exit 0
+
+printf "\n" && exit 0
 
 
