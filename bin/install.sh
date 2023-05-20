@@ -61,21 +61,23 @@ printf "\n"
 
 # Dotfiles
 info "Fetching dotfiles..."
-if [[ -d $DOTFILES ]]; then
+if [[ -d "$DOTFILES" ]]; then
   rm -rf $DOTFILES
 fi
 
 mkdir -p $DOTFILES
 git clone https://github.com/0x6969766f/dotfiles.git $DOTFILES
 cd $DOTFILES
-printf "my dir is $(pwd)"
-printf "my stuff is in ${DOTFILES}"
 git pull origin main
 success "Dotfiles fetched successfully!"
+
+printf "\n"
 
 # Playbook
 info "Running playbook..."
 #ANSIBLE_CONFIG=./ansible/ansible.cfg ansible-playbook -i ansible/hosts ansible/dotfiles.yml -v
+
+printf $(pwd)
 
 success "Done!"
 exit 0
