@@ -7,7 +7,7 @@ brew_packages:
   - ansible
   - mas
 
-brew_casks:
+cask_packages:
   # applications
   - 1password
   - alacritty
