@@ -29,7 +29,26 @@ read -p "If yes, then press 'Y' or 'y' to continue " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   printf "\nNoice! Let's go!\n"
 else
-  printf "\nPlease set up things above before continuing.\n"
+  printf "\nPlease set up following steps before continuing.\n"
+  printf "\n"
+  
+  printf "Adding a new ssh key:\n"
+  
+  printf "---\n"
+  printf "ssh-keygen -t ed25519 -C "your_email@example.com"\n"
+  printf "eval "$(ssh-agent -s)"\n"
+  printf "mkdir -p ~/.ssh && touch ~/.ssh/config\n"
+  printf "\n"
+  
+  printf "Host github.com\n"
+  printf "  AddKeysToAgent yes\n"
+  printf "  IdentityFile ~/.ssh/id.personal\n"
+  printf "  IgnoreUnknown UseKeychain\n"
+  printf "\n"
+
+  printf "ssh-add ~/.ssh/id.personal"
+  printf "pbcopy < ~/.ssh/id.personal.pub\n"
+  
   exit 1
 fi
 
