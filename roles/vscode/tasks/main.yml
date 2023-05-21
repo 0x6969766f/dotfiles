@@ -5,7 +5,7 @@
 
 - name: "[ vscode ] Install vscode extensions"
   package: "{{ item }}"
-  loop: "{{ result.stdout_lines }}"
+  loop: "code --install-extension {{ result.stdout_lines }} --force"
 
 - name: "[ vscode ] Set symlink to vscode settings"
   ansible.builtin.file:
