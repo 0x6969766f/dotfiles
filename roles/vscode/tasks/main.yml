@@ -2,13 +2,13 @@
 - name: "[ vscode ] Setup"
 - block:
     - name: "Install extensions"
-      command: code --install-extension {{ item }}
+      ansible.builtin.command: code --install-extension {{ item }}
       loop: "{{ vscode_packages }}"
       loop_control:
         label: "{{ item }}"
 
     - name: "Update settings"
-      file:
+      ansible.builtin.file:
         src: "{{ ansible_env.PWD }}/roles/vscode/files/settings.json"
         path: "~/Library/Application\ Support/Code/User/settings.json"
         state: link
