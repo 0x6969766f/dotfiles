@@ -1,11 +1,28 @@
 ---
-- name: "[ vscode ] Get list of vscode extensions"
-  command: cat ~/Development/dotfiles/files/vscode/extensions.txt
-  register: result
+# - name: "[ vscode ] Get list of vscode extensions"
+#   command: cat ~/Development/dotfiles/files/vscode/extensions.txt
+#   register: result
 
-- name: "[ vscode ] Install vscode extensions"
-  package: "{{ item }}"
-  loop: "{{ result.stdout_lines | code --install-extension --force }}"
+# - name: "[ vscode ] Install vscode extensions"
+#   package: "{{ item }}"
+#   loop: "{{ result.stdout_lines | code --install-extension --force }}"
+- name: "[ vscode ] Get list of vscode extensions to install"
+  ansible.builtin.shell: |
+    cat {{ ansible_env.PWD }}/files/vscode/extensions.txt > /tmp/vscodeExtensionsToInstall
+  changed_when: false
+
+- name: "[ vscode ] Store list of vscode extensions into variable"
+  ansible.builtin.command: "cat /tmp/vscodeExtensionsToInstall"
+  register: extensions_to_install
+  changed_when: false
+  tags:
+    - skip_ansible_lint
+
+- name: "[ vscode ] Install extensions"
+  ansible.builtin.shell: |
+    code --install-extension --force {{ item }}
+  with_items:
+    - "{{ extensions_to_install.stdout_lines }}"
 
 - name: "[ vscode ] Set symlink to vscode settings"
   ansible.builtin.file:
