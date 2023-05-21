@@ -8,6 +8,8 @@ info () {
   printf "\r[ \033[00;34m..\033[0m ] $1\n"
 }
 
+
+
 success () {
   printf "\r\033[2K[ \033[00;32mOK\033[0m ] $1\n"
 }
@@ -22,15 +24,22 @@ cd
 
 printf "Hello $(whoami)! Let's get you set up.\n\n"
 
-# TODO: Should prompt pre-installation questions here!
+printf "Before we begin, did you remember to do following things?\n"
+printf "[ x ] login to app store\n"
+printf "[ x ] add ssh keys for github\n"
+printf "\n"
+read -p "If yes, then press 'Y' or 'y' to continue " -n 1 -r
 
-# read -p "Did you created an ssh key and added it to all services? press 'Y' or 'y' to continue " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  printf "\nNoice! Let's go!\n"
+else
+  printf "\nPlease set up things above before continuing.\n"
+  exit 1
+fi
 
-# if [[ $REPLY =~ ^[Yy]$ ]]; then
-#   source ./macos.sh
-# fi
+printf "\n"
 
-# Command Line Tools
+Command Line Tools
 info "Installing macOS Command Line Tools"
 if [[ ! -x /usr/bin/gcc ]]; then
   xcode-select --install
@@ -111,12 +120,12 @@ success "Done!"
 
 # Restart affected applications if `--no-restart` flag is not present.
 if [[ ! ($* == *--no-restart*) ]]; then
-  for app in "cfprefsd" "Dock" "Finder" "SystemUIServer" "Terminal" "iTerm2"; do
+  for app in "cfprefsd" "Dock" "Finder" "SystemUIServer"; do
     killall "${app}" > /dev/null 2>&1
   done
 fi
 
-success "Please log out and log back in to make all settings take effect.\n"
+success: "Done! Next restart terminal and run 'p10k configure'. After that log out and log back in to make all settings take effect.\n"
 printf "\n" && exit 0
 
 
