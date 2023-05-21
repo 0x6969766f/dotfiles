@@ -4,8 +4,8 @@
   register: result
 
 - name: "[ vscode ] Install vscode extensions"
-  package: "{{ item }}"
-  loop: "code --install-extension {{ result.stdout_lines }} --force"
+  package: "code --install-extension {{ item }} --force"
+  loop: "{{ result.stdout_lines }}"
 
 - name: "[ vscode ] Set symlink to vscode settings"
   ansible.builtin.file:
