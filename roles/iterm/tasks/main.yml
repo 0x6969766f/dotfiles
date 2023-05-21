@@ -1,14 +1,14 @@
 ---
-- name: "[ iterm ] Link custom preferences"
+- name: "[ iterm ] Link preferences"
   ansible.builtin.file:
-    src: "{{ ansible_env.PWD }}/files/iterm/com.googlecode.iterm2.plist"
+    src: "{{ ansible_env.PWD }}/roles/iterm/files/com.googlecode.iterm2.plist"
     path: "~/.config/iterm2/com.googlecode.iterm2.plist"
     state: link
     force: yes
 
-- name: "[ iterm ] Link custom themes"
+- name: "[ iterm ] Link themes"
   ansible.builtin.file:
-    src: "{{ ansible_env.PWD }}/files/iterm/themes"
+    src: "{{ ansible_env.PWD }}/roles/iterm/files/themes"
     path: "~/.config/iterm2/themes"
     state: link
     force: yes
