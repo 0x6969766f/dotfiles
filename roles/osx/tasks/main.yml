@@ -71,14 +71,6 @@
     value: false
     state: present
 
-- name: "[ osx ] Enable tap to click"
-  osx_defaults:
-    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
-    key: Clicking
-    type: bool
-    value: true
-    state: present
-
 - name: "[ osx ] Increase sound quality for Bluetooth headphones/headsets"
   osx_defaults:
     domain: com.apple.BluetoothAudioAgent
