@@ -18,3 +18,5 @@ TODO:
 - Generate NPM key if profile is work
 - Separate tasks for symlinks (don't loop)
 - Installing vscode extensions should have prettier output
+- Imporved .gitconfig
+- See if tasks can be combined?
