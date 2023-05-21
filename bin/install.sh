@@ -143,6 +143,10 @@ printf "\n"
 printf "Lastly, you might want to do the following:\n"
 printf "[ x ] restart/switch terminal and run 'p10k configure'\n"
 printf "[ x ] log out and log back in to make all settings take effect\n"
+printf "[ x ] install drivers for external soundcard\n"
+printf "[ x ] generate ssh keys (work)\n"
+printf "[ x ] generate npm keys (work)\n"
+printf "[ x ] add osx profile (work)\n"
 
 printf "\n" && exit 0
 
