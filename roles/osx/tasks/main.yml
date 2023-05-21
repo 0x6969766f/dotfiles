@@ -1,37 +1,35 @@
 ---
-- name: "[ osx ]"
-- block:
-    - name: "Set ComputerName"
-      osx_defaults:
-        domain: scutil
-        key: ComputerName
-        type: string
-        value: "0x6969766f"
-        state: present
+- name: "[ osx ] Set ComputerName"
+  osx_defaults:
+    domain: scutil
+    key: ComputerName
+    type: string
+    value: "0x6969766f"
+    state: present
 
-    - name: "Set HostName"
-      osx_defaults:
-        domain: scutil
-        key: HostName
-        type: string
-        value: "0x6969766f"
-        state: present
+- name: "[ osx ] Set HostName"
+  osx_defaults:
+    domain: scutil
+    key: HostName
+    type: string
+    value: "0x6969766f"
+    state: present
 
-    - name: "Set LocalHostName"
-      osx_defaults:
-        domain: scutil
-        key: LocalHostName
-        type: string
-        value: "0x6969766f"
-        state: present
+- name: "[ osx ] Set LocalHostName"
+  osx_defaults:
+    domain: scutil
+    key: LocalHostName
+    type: string
+    value: "0x6969766f"
+    state: present
 
-    - name: "Set NetBIOSName"
-      osx_defaults:
-        domain: ~/Library/Preferences/SystemConfiguration/com.apple.smb.server
-        key: NetBIOSName
-        type: string
-        value: "0x6969766f"
-        state: present
+- name: "[ osx ] Set NetBIOSName"
+  osx_defaults:
+    domain: ~/Library/Preferences/SystemConfiguration/com.apple.smb.server
+    key: NetBIOSName
+    type: string
+    value: "0x6969766f"
+    state: present
 
 - name: "[ osx ] Disable boot sound"
   osx_defaults:
