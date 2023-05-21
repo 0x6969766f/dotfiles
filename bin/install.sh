@@ -105,7 +105,7 @@ printf "\n"
 
 # Dotfiles
 info "Fetching dotfiles..."
-git clone https://github.com/0x6969766f/dotfiles.git $DOTFILES
+git clone git@github.com:0x6969766f/dotfiles.git $DOTFILES
 cd $DOTFILES
 git pull origin main
 success "Dotfiles fetched successfully!"
