@@ -25,4 +25,4 @@
 #     force: yes
 - name: "[ vscode ] Install vscode extensions"
   command: code --install-extension {{ item }} --force
-  loop: "{{ vscode_extensions }}"
+  loop: "{{ vscode_packages }}"
