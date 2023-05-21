@@ -34,7 +34,7 @@ else
   
   printf "Adding a new ssh key:\n"
   
-  printf "---\n"
+  printf "\n"
   printf "ssh-keygen -t ed25519 -C "your_email@example.com"\n"
   printf "eval "$(ssh-agent -s)"\n"
   printf "mkdir -p ~/.ssh && touch ~/.ssh/config\n"
