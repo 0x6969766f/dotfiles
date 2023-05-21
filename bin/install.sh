@@ -39,7 +39,7 @@ fi
 
 printf "\n"
 
-Command Line Tools
+# Command Line Tools
 info "Installing macOS Command Line Tools"
 if [[ ! -x /usr/bin/gcc ]]; then
   xcode-select --install
