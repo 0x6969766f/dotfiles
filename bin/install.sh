@@ -31,24 +31,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 else
   printf "\nPlease set up following steps before continuing.\n"
   printf "\n"
-  
-  printf "Adding a new ssh key:\n"
-  
-  printf "\n"
-  printf "ssh-keygen -t ed25519 -C "your_email@example.com"\n"
-  printf "eval "$(ssh-agent -s)"\n"
-  printf "mkdir -p ~/.ssh && touch ~/.ssh/config\n"
-  printf "\n"
-  
-  printf "Host github.com\n"
-  printf "  AddKeysToAgent yes\n"
-  printf "  IdentityFile ~/.ssh/id.personal\n"
-  printf "  IgnoreUnknown UseKeychain\n"
-  printf "\n"
 
-  printf "ssh-add ~/.ssh/id.personal"
-  printf "pbcopy < ~/.ssh/id.personal.pub\n"
+  printf "Generate new ssh key:\n"
+  printf "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\n"
   
+  printf "Add ssh key to Github:\n"
+  printf "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account\n"
+    
   exit 1
 fi
 
