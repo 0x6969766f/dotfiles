@@ -17,6 +17,9 @@
     - role: dotfiles
       tags: ["dotfiles"]
 
+    - role: iterm
+      tags: ["iterm"]
+
     - role: mas
       tags: ["mas"]
 

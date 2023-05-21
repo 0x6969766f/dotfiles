@@ -1,0 +1,28 @@
+---
+- name: "[ iterm ] Copy custom preferences"
+  ansible.builtin.copy:
+    src: "{{ ansible_env.PWD }}/files/iterm/com.googlecode.iterm2.plist"
+    dest: "~/.config/iterm2/com.googlecode.iterm2.plist"
+    force: yes
+
+- name: "[ iterm ] Copy custom themes"
+  ansible.builtin.copy:
+    src: "{{ ansible_env.PWD }}/files/iterm/themes"
+    dest: "~/.config/iterm2/themes"
+    force: yes
+
+- name: "[ iterm ] Set custom preferences directory"
+  osx_defaults:
+    domain: com.googlecode.iterm2
+    key: PrefsCustomFolder
+    type: string
+    value: "~/.config/iterm2"
+    state: present
+
+- name: "[ iterm ] Enable custom preference"
+  osx_defaults:
+    domain: com.googlecode.iterm2
+    key: LoadPrefsFromCustomFolder
+    type: bool
+    value: true
+    state: present
