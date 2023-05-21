@@ -20,7 +20,7 @@
 
 - name: "[ vscode ] Install extensions"
   ansible.builtin.shell: |
-    code --install-extension --force {{ item }}
+    code --install-extension {{ item }} --force 
   with_items:
     - "{{ extensions_to_install.stdout_lines }}"
 
