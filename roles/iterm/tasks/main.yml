@@ -1,14 +1,16 @@
 ---
-- name: "[ iterm ] Copy custom preferences"
-  ansible.builtin.copy:
+- name: "[ iterm ] Link custom preferences"
+  ansible.builtin.file:
     src: "{{ ansible_env.PWD }}/files/iterm/com.googlecode.iterm2.plist"
-    dest: "~/.config/iterm2/com.googlecode.iterm2.plist"
+    path: "~/.config/iterm2/com.googlecode.iterm2.plist"
+    state: link
     force: yes
 
-- name: "[ iterm ] Copy custom themes"
-  ansible.builtin.copy:
+- name: "[ iterm ] Link custom themes"
+  ansible.builtin.file:
     src: "{{ ansible_env.PWD }}/files/iterm/themes"
-    dest: "~/.config/iterm2/themes"
+    path: "~/.config/iterm2/themes"
+    state: link
     force: yes
 
 - name: "[ iterm ] Set custom preferences directory"
