@@ -1,8 +1,36 @@
 ---
 - name: "[ vscode ] Install extensions"
-  shell: |
+  ansible.builtin.shell: |
     cat ~/Development/dotfiles/files/vscode/extensions.txt | while read extension; do code --install-extension $extension --force; done
 
-- name: "[ vscode ] Update settings"
-  shell: |
-    cp ~/Development/dotfiles/files/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+# - name: "[ vscode ] Update settings"
+#   ansible.builtin.shell: |
+#     cp ~/Development/dotfiles/files/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+# - name: "[ vcode ] Get list of files to symlink"
+#   ansible.builtin.shell: |
+#     ls -1 {{ ansible_env.PWD }}/files/dotfiles > /tmp/dotfilesToLink
+#   changed_when: false
+
+# - name: "[ dotfiles ] Store list of files into variable"
+#   ansible.builtin.command: "cat /tmp/dotfilesToLink"
+#   register: files_to_symlink
+#   changed_when: false
+#   tags:
+#     - skip_ansible_lint
+
+# - name: "[ dotfiles ] Set symlinks"
+#   ansible.builtin.file:
+#     src: "{{ ansible_env.PWD }}/files/dotfiles/{{ item }}"
+#     path: "~/.{{ item }}"
+#     state: link
+#     force: yes
+#   with_items:
+#     - "{{ files_to_symlink.stdout_lines }}"
+
+- name: "[ vscode ] Set settings symlink"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/files/vscode/settings.json"
+    path: "~/Library/Application\ Support/Code/User/settings.json"
+    state: link
+    force: yes
