@@ -8,16 +8,12 @@ info () {
   printf "\r[ \033[00;34m..\033[0m ] $1\n"
 }
 
-
-
 success () {
   printf "\r\033[2K[ \033[00;32mOK\033[0m ] $1\n"
 }
 
-info "Ask for sudo password"
-sudo -v
-
-clear
+# Ask for sudo password
+sudo -v && clear
 
 # Move to ~ if we are not there yet
 cd
@@ -109,14 +105,15 @@ printf "\n"
 # Playbook
 info "Running playbook..."
 
-# Get full directory path of this wrapper
+# Steps:
+# ) Get full directory path of this wrapper 
+# ) Install Ansible requirements like roles and collections
+# ) Execute the Ansible playbook
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-# Install Ansible requirements like roles and collections
-ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-galaxy install -r ${SCRIPTPATH}/requirements.yml &>/dev/null
-# Execute the Ansible playbook
+ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-galaxy install -r ${SCRIPTPATH}/requirements.yml &>/dev/null 
 ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-playbook ${SCRIPTPATH}/config.yml --ask-become-pass --tags "all"
 
-success "Done!"
+success "Done!\n"
 
 # Restart affected applications if `--no-restart` flag is not present.
 if [[ ! ($* == *--no-restart*) ]]; then
@@ -125,7 +122,12 @@ if [[ ! ($* == *--no-restart*) ]]; then
   done
 fi
 
-success: "Done! Next restart terminal and run 'p10k configure'. After that log out and log back in to make all settings take effect.\n"
+printf "\n"
+
+printf "Lastly, you might want to do the following:\n"
+printf "[ x ] restart/switch terminal and run 'p10k configure'\n"
+printf "[ x ] log out and log back in to make all settings take effect\n"
+
 printf "\n" && exit 0
 
 
