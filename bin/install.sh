@@ -120,8 +120,8 @@ info "Running playbook..."
 # ) Install Ansible requirements like roles and collections
 # ) Execute the Ansible playbook
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-galaxy install -r ${SCRIPTPATH}/config.requirements.yml &>/dev/null 
-ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-playbook ${SCRIPTPATH}/config.dotfiles.yml --ask-become-pass --tags "all"
+ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-galaxy install -r ${SCRIPTPATH}/config/requirements.yml &>/dev/null 
+ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg ansible-playbook ${SCRIPTPATH}/config/setup.yml --ask-become-pass --tags "all"
 
 success "Done!\n"
 
