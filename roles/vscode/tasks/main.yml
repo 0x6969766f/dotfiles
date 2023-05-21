@@ -1,15 +1,11 @@
 ---
-# - name: "[ vscode ] Get list of vscode extensions"
-#   command: cat ~/Development/dotfiles/files/vscode/extensions.txt
-#   register: result
+- name: "[ vscode ] Get list of vscode extensions"
+  command: cat ~/Development/dotfiles/files/vscode/extensions.txt
+  register: result
 
-# - name: "[ vscode ] Install vscode extensions"
-#   package: "code --install-extension {{ item }} --force"
-#   loop: "{{ result.stdout_lines }}"
-- name: "[ vscode ] Install extensions"
-  vscode:
-    name: "{{ item }}"
-  loop: "{{ vscode_extensions }}"
+- name: "[ vscode ] Install vscode extensions"
+  package: "{{ item }}"
+  loop: "{{ result.stdout_lines | code --install-extension --force }}"
 
 - name: "[ vscode ] Set symlink to vscode settings"
   ansible.builtin.file:
