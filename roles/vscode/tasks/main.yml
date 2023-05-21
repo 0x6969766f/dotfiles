@@ -24,6 +24,5 @@
 #     state: link
 #     force: yes
 - name: "[ vscode ] Install vscode extensions"
-  vscode:
-    command: code --install-extension {{ item }} --force
+  command: code --install-extension {{ item }} --force
   loop: "{{ vscode_extensions }}"
