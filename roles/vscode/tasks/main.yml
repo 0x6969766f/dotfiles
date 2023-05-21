@@ -1,25 +1,29 @@
 ---
-- name: "[ vscode ] Get list of vscode extensions to install"
-  ansible.builtin.shell: |
-    cat {{ ansible_env.PWD }}/files/vscode/extensions.txt > /tmp/vscodeExtensionsToInstall
-  changed_when: false
+# - name: "[ vscode ] Get list of vscode extensions to install"
+#   ansible.builtin.shell: |
+#     cat {{ ansible_env.PWD }}/files/vscode/extensions.txt > /tmp/vscodeExtensionsToInstall
+#   changed_when: false
 
-- name: "[ vscode ] Store list of vscode extensions into variable"
-  ansible.builtin.command: "cat /tmp/vscodeExtensionsToInstall"
-  register: extensions_to_install
-  changed_when: false
-  tags:
-    - skip_ansible_lint
+# - name: "[ vscode ] Store list of vscode extensions into variable"
+#   ansible.builtin.command: "cat /tmp/vscodeExtensionsToInstall"
+#   register: extensions_to_install
+#   changed_when: false
+#   tags:
+#     - skip_ansible_lint
 
-- name: "[ vscode ] Install extensions"
-  ansible.builtin.shell: |
-    code --install-extension {{ item }} --force
-  with_items:
-    - "{{ extensions_to_install.stdout_lines }}"
+# - name: "[ vscode ] Install extensions"
+#   ansible.builtin.shell: |
+#     code --install-extension {{ item }} --force
+#   with_items:
+#     - "{{ extensions_to_install.stdout_lines }}"
 
-- name: "[ vscode ] Set symlink to vscode settings"
-  ansible.builtin.file:
-    src: "{{ ansible_env.PWD }}/files/vscode/settings.json"
-    path: "~/Library/Application\ Support/Code/User/settings.json"
-    state: link
-    force: yes
+# - name: "[ vscode ] Set symlink to vscode settings"
+#   ansible.builtin.file:
+#     src: "{{ ansible_env.PWD }}/files/vscode/settings.json"
+#     path: "~/Library/Application\ Support/Code/User/settings.json"
+#     state: link
+#     force: yes
+- name: "[ vscode ] Install vscode extensions"
+  vscode:
+    command: code --install-extension {{ item }} --force
+  loop: "{{ vscode_extensions }}"
