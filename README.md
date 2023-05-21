@@ -1,7 +1,15 @@
-Mmmm... files
+Mmm... files
 
 ```bash
 curl https://raw.githubusercontent.com/0x6969766f/dotfiles/main/bin/install.sh --output install.sh
 chmod +x install.sh
 sh install.sh
 ```
+
+TODO:
+
+- Split configurations into profiles
+- Generate SSH keys based on profile selection before running playbook
+- Generate NPM key if profile is work
+- Separate tasks for symlinks (don't loop)
+- Installing vscode extensions should have prettier output
