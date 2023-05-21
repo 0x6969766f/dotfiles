@@ -1,15 +1,15 @@
 ---
 - name: "[ zsh ] Run pre-install clean up"
-  ansible.builtin.shell: rm -rf ~/.oh-my-zsh ~/.zshrc ~/.p10k.zsh
+  shell: rm -rf ~/.oh-my-zsh ~/.zshrc ~/.p10k.zsh
 
 - name: "[ zsh ] Install oh-my-zsh"
-  ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 - name: "[ zsh ] Install powerlevel10k"
-  ansible.builtin.shell: brew install romkatv/powerlevel10k/powerlevel10k
+  shell: brew install romkatv/powerlevel10k/powerlevel10k
 
 - name: "[ zsh ] Source powerlevel10k"
-  ansible.builtin.shell: echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+  shell: echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
 - name: "[ zsh ] Restart zsh"
-  ansible.builtin.shell: exec zsh
+  shell: exec zsh

@@ -1,3 +1,8 @@
 ---
 - name: "[ vscode ] Install extensions"
-  ansible.builtin.shell: cat ~/Development/dotfiles/files/vscode/extensions.txt | while read extension; do code --install-extension $extension; done
+  shell: |
+    cat ~/Development/dotfiles/files/vscode/extensions.txt | while read extension; do code --install-extension $extension --force; done
+
+- name: "[ vscode ] Update settings"
+  shell: |
+    cp ~/Development/dotfiles/files/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
