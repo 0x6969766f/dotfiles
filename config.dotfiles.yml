@@ -1,8 +1,8 @@
 ---
-- name: Setup
+- name: Setup dotfiles
   hosts: local
 
-  vars_files: ["packages.yml"]
+  vars_files: ["config.packages.yml"]
 
   roles:
     - role: geerlingguy.mac.homebrew
