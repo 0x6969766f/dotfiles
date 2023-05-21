@@ -34,10 +34,12 @@ else
 
   printf "Generate new ssh key:\n"
   printf "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\n"
+
+  printf "\n"
   
   printf "Add ssh key to Github:\n"
   printf "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account\n"
-    
+
   exit 1
 fi
 
