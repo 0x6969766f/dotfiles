@@ -1,5 +1,3 @@
 ---
 - name: "[ vscode ] Install extensions"
-  vscode_packages:
-    name: "{{ item }}"
-  loop: "{{ vscode_packages }}"
+  ansible.builtin.shell: cat ${DOTFILES}/files/vscode/extensions.txt | while read extension; do code --install-extension $extension; done
