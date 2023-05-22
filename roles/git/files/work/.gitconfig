@@ -1,0 +1,8 @@
+# ~/Development/work/.gitconfig
+
+[credential]
+    username = iilei
+
+[user]
+    name = Iivari leinonen
+    email = iivari.leinonen@upcloud.com

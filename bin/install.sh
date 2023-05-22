@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES="${HOME}/Development/dotfiles"
+DOTFILES="${HOME}/.dotfiles"
 
 info () {
   printf "\r[ \033[00;34m..\033[0m ] $1\n"
@@ -94,6 +94,8 @@ printf "\n"
 info "Setting up directories..."
 mkdir -p $HOME/Archives
 mkdir -p $HOME/Development
+mkdir -p $HOME/Development/personal
+mkdir -p $HOME/Development/work
 mkdir -p $HOME/Screenshots
 if [[ -d "$DOTFILES" ]]; then
   rm -rf $DOTFILES

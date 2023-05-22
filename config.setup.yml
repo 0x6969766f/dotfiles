@@ -20,6 +20,9 @@
     - role: dotfiles
       tags: ["dotfiles"]
 
+    - role: git
+      tags: ["git"]
+
     - role: iterm
       tags: ["iterm"]
 

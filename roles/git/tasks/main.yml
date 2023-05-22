@@ -1,0 +1,21 @@
+---
+- name: "[ git ] Link .gitconfig"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/git/files/.gitconfig"
+    path: "~/.gitconfig"
+    state: link
+    force: yes
+
+- name: "[ git ] Link personal .gitconfig"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/git/files/personal/.gitconfig"
+    path: "~/Development/personal/.gitconfig"
+    state: link
+    force: yes
+
+- name: "[ git ] Link work .gitconfig"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/git/files/work/.gitconfig"
+    path: "~/Development/work/.gitconfig"
+    state: link
+    force: yes
