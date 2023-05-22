@@ -5,6 +5,7 @@ brew_taps:
 
 brew_packages:
   - ansible
+  - docker
   - mas
   - zplug
 
