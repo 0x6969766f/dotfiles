@@ -1,0 +1,12 @@
+---
+- name: "[ fnm ] Install node versions"
+  ansible.builtin.command: fnm install {{ item }}
+  loop: "{{ node_versions }}"
+  loop_control:
+    label: "{{ item }}"
+
+- name: "[ fnm ] Set node version"
+  ansible.builtin.command: fnm use 18.06
+
+- name: "[ fnm ] Set default node"
+  ansible.builtin.command: fnm default 18.06

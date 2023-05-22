@@ -6,8 +6,11 @@ brew_taps:
 brew_packages:
   - ansible
   - docker
+  - fnm
   - mas
+  - pnpm
   - zplug
+  - yarn
 
 cask_packages:
   # applications
@@ -77,3 +80,7 @@ vscode_packages:
   - xabikos.JavaScriptSnippets
   - xdae.vscode-snazzy-theme
   - Zignd.html-css-class-completion
+
+node_versions:
+  - latest
+  - 18.06

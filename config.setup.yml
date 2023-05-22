@@ -11,6 +11,9 @@
     - role: brew
       tags: ["brew"]
 
+    - role: fnm
+      tags: ["fnm"]
+
     - role: zsh
       tags: ["zsh"]
 
