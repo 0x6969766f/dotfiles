@@ -1,8 +1,27 @@
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+
   "atomKeymap.promptV3Features": true,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true,
+    "source.organizeImports": false
+  },
 
   "editor.cursorStyle": "block",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "JetBrainsMonoNFM-Regular, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
   "editor.formatOnPaste": true,
@@ -13,6 +32,8 @@
   "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 2,
   "editor.wordWrap": "wordWrapColumn",
+
+  "eslint.format.enable": true,
 
   "github.copilot.enable": {
     "*": true,
@@ -26,7 +47,7 @@
   "vim.smartRelativeLine": true,
   "window.zoomLevel": 1,
 
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.sideBar.location": "right",
-  "editor.fontFamily": "JetBrainsMonoNFM-Regular, Menlo, Monaco, 'Courier New', monospace"
+  "workbench.startupEditor": "none"
 }
