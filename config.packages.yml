@@ -11,6 +11,7 @@ brew_packages:
   - mas
   - pnpm
   - ripgrep
+  - tmux
   - wget
   - yarn
   - zplug
