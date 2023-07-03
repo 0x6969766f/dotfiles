@@ -7,7 +7,7 @@ brew_packages:
   - ansible
   - docker
   - fnm
-  - fsouza/prettierd/prettierd
+  - go
   - mas
   - pnpm
   - ripgrep
