@@ -10,8 +10,9 @@ brew_packages:
   - fsouza/prettierd/prettierd
   - mas
   - pnpm
-  - zplug
+  - wget
   - yarn
+  - zplug
 
 cask_packages:
   # applications
