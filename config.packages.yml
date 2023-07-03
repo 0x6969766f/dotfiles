@@ -10,6 +10,7 @@ brew_packages:
   - fsouza/prettierd/prettierd
   - mas
   - pnpm
+  - ripgrep
   - wget
   - yarn
   - zplug
