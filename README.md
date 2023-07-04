@@ -8,12 +8,6 @@ sh install.sh
 
 TODO:
 
-- Add colorls (ruby gem)
-
----
-
-TODO:
-
 - Split configurations into profiles
 - Interactive prompt to select:
   - profile(s)
