@@ -7,6 +7,9 @@ sh install.sh
 ```
 
 TODO:
+- https://github.com/ALT-F4-LLC/dotfiles
+
+TODO:
 
 - Split configurations into profiles
 - Interactive prompt to select:
