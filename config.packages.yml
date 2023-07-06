@@ -34,9 +34,9 @@ cask_packages:
   - figma
   - insomnia
   - iterm2
+  - openvpn-connect
   - sourcetree
   - tableplus
-  - viscosity
   - visual-studio-code
   # fonts
   - font-meslo-lg-nerd-font
