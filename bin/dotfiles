@@ -8,38 +8,40 @@ DOTFILES_DIR="${HOME}/.dotfiles"
 SSH_DIR="${HOME}/.ssh"
 
 # Icons
-INFO="\r[ \033[00;34m..\033[0m ]"
-SUCCESS="\r\033[2K[ \033[00;32mOK\033[0m ]"
+STATUS_INFO="\r[ \033[00;34m..\033[0m ]"
+STATUS_SUCCESS="\r\033[2K[ \033[00;32mOK\033[0m ]"
 
 # Move to ~ if we are not there yet and start fresh
 cd && clear
 
-printf "Hello %s! Let's get you set up.\n\n" "$(whoami)"
+echo -e "Hello $(whoami)! Let's get you set up.\n\n"
 
 # Command Line Tools
-printf "%s Installing macOS Command Line Tools\n" "${INFO}"
+echo -e "${STATUS_INFO} Installing macOS Command Line Tools\n"
 if xcode-select -p &> /dev/null; then
-  printf "%s Command Line Tools already installed, skipping...\n" "${SUCCESS}"
+  echo -e "${STATUS_SUCCESS} Command Line Tools already installed, skipping...\n"
 else
   xcode-select --install
   xcode-select --switch /Library/Developer/CommandLineTools
   /usr/sbin/softwareupdate --install-rosetta --agree-to-license
-  printf "%s Command Line tools installed successfully!\n" "${SUCCESS}"
+  echo -e "${STATUS_SUCCESS} Command Line tools installed successfully!\n"
 fi 
 
+printf "\n"
+
 # Homebrew
-printf "%s Installing Homebrew\n" "${INFO}"
+echo -e "${STATUS_INFO} Installing Homebrew\n"
 if which -s brew; then
-  printf "%s Homebrew already installed, updating...\n" "${SUCCESS}"
+  echo -e "${STATUS_SUCCESS} Homebrew already installed, updating...\n"
   brew update && brew upgrade
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "eval '$(/opt/homebrew/bin/brew shellenv)'" >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
-  printf "%s Homebrew installed successfully!\n" "${SUCCESS}"
+  echo -e "${STATUS_SUCCESS} Homebrew installed successfully!\n"
 fi
 
-# printf "\n"
+printf "\n"
 
 # # Ansbible
 # info "Installing Ansible"
