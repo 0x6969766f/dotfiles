@@ -7,14 +7,9 @@ CONFIG_DIR="${HOME}/.config/dotfiles"
 DOTFILES_DIR="${HOME}/.dotfiles"
 SSH_DIR="${HOME}/.ssh"
 
-# Helpers
-info () {
-  printf "\r[ \033[00;34m..\033[0m ] $1\n"
-}
-
-success () {
-  printf "\r\033[2K[ \033[00;32mOK\033[0m ] $1\n"
-}
+# Icons
+INFO="\r[ \033[00;34m..\033[0m ]"
+SUCCESS="\r\033[2K[ \033[00;32mOK\033[0m ]"
 
 # Move to ~ if we are not there yet and start fresh
 cd && clear
@@ -22,12 +17,16 @@ cd && clear
 printf "Hello $(whoami)! Let's get you set up.\n\n"
 
 # Homebrew
-info "Installing Homebrew"
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-success "Homebrew installed successfully!"
+printf "${INFO} Installing Homebrew\n"
+if ! [-x "$(command -v brew)" ]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  printf "${SUCCESS} Homebrew installed successfully!\n"
+else
+  printf "${SUCCESS} Homebrew already installed, updating...\n"
+  brew update && brew upgrade
+fi
 
 # printf "\n"
 
