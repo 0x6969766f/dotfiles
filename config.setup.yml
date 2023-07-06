@@ -26,6 +26,12 @@
     - role: iterm
       tags: ["iterm"]
 
+    - role: nvim
+      tags: ["nvim"]
+
+    - role: tmux
+      tags: ["tmux"]
+
     - role: mas
       tags: ["mas"]
 

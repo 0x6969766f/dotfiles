@@ -9,6 +9,7 @@ brew_packages:
   - fnm
   - go
   - mas
+  - neovim
   - pnpm
   - ripgrep
   - tmux
@@ -47,7 +48,6 @@ mas_packages:
   - 430798174 # hazeover
 
 vscode_packages:
-  - aaravb.chrome-extension-developer-tools
   - aaron-bond.better-comments
   - astro-build.astro-vscode
   - bradlc.vscode-tailwindcss

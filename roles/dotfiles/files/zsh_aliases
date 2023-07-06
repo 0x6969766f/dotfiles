@@ -1,3 +1,7 @@
+# Nvim
+alias vi="nvim"
+alias vim="nvim"
+
 # Be nice
 alias please="sudo "
 

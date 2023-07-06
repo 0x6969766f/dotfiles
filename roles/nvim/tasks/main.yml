@@ -1,0 +1,7 @@
+---
+- name: "[ nvim ] Link preferences"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/nvim/files/nvim"
+    path: "~/.config/nvim"
+    state: link
+    force: yes
