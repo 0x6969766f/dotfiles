@@ -22,7 +22,8 @@ cd && clear
 
 # Start
 info "Hello $(whoami)! Let's get you set up."
-printf "\n\n"
+
+printf "\n"
 
 # Directories
 info "Setting up directories..."
@@ -71,9 +72,9 @@ printf "\n"
 # Homebrew
 info "Installing Homebrew..."
 if which -s brew; then
-  info "Homebrew already installed, updating..."
+  success "Homebrew already installed, skipping...!"
   brew update && brew upgrade
-  success "Homebrew updated successfully!"
+  success "Homebrew updated and upgraded successfully!"
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   (echo; echo "eval '$(/opt/homebrew/bin/brew shellenv)'") >> ~/.zprofile
@@ -99,10 +100,11 @@ info "Fetching dotfiles..."
 if ! [[ -d "$DOTFILES"  ]]; then
   mkdir -p "$DOTFILES"
   git clone https://github.com/0x6969766f/dotfiles.git "$DOTFILES"
+  success "Dotfiles fetched successfully!"
 else
   git -C "$DOTFILES" pull
+  success "Dotfiles updated successfully!"
 fi
-success "Dotfiles fetched successfully!"
 
 printf "\n"
 
@@ -113,14 +115,23 @@ info "Running playbook..."
 # ) Get full directory path of this wrapper
 # ) Install Ansible requirements like roles and collections
 # ) Execute the Ansible playbook
-SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+# SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg \
-  ansible-galaxy install -r "${SCRIPTPATH}/config.requirements.yml" \
+
+# ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg \
+#   ansible-galaxy install -r "${SCRIPTPATH}/config.requirements.yml" \
+#   &>/dev/null 
+
+ANSIBLE_CONFIG="$DOTFILES/ansible.cfg" \
+  ansible-galaxy install -r "$DOTFILES/config.requirements.yml" \
   &>/dev/null 
 
-ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg \
-  ansible-playbook "${SCRIPTPATH}/config.setup.yml" \
+# ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg \
+#   ansible-playbook "${SCRIPTPATH}/config.setup.yml" \
+#   --ask-become-pass --tags "all"
+
+ANSIBLE_CONFIG="$DOTFILES/ansible.cfg" \
+  ansible-playbook "$DOTFILES/config.setup.yml" \
   --ask-become-pass --tags "all"
 
 success "Done!"
