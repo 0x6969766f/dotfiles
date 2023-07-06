@@ -17,43 +17,43 @@ cd && clear
 echo -e "Hello $(whoami)! Let's get you set up.\n\n"
 
 # Command Line Tools
-echo -e "${STATUS_INFO} Installing macOS Command Line Tools\n"
+echo -e "${STATUS_INFO} Installing macOS Command Line Tools"
 if xcode-select -p &> /dev/null; then
-  echo -e "${STATUS_SUCCESS} Command Line Tools already installed, skipping...\n"
+  echo -e "${STATUS_SUCCESS} Command Line Tools already installed, skipping..."
 else
   xcode-select --install
   xcode-select --switch /Library/Developer/CommandLineTools
   /usr/sbin/softwareupdate --install-rosetta --agree-to-license
-  echo -e "${STATUS_SUCCESS} Command Line tools installed successfully!\n"
+  echo -e "${STATUS_SUCCESS} Command Line tools installed successfully!"
 fi 
 
 printf "\n"
 
 # Homebrew
-echo -e "${STATUS_INFO} Installing Homebrew\n"
+echo -e "${STATUS_INFO} Installing Homebrew"
 if which -s brew; then
-  echo -e "${STATUS_SUCCESS} Homebrew already installed, updating...\n"
+  echo -e "${STATUS_SUCCESS} Homebrew already installed, updating..."
   brew update && brew upgrade
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   (echo; echo "eval '$(/opt/homebrew/bin/brew shellenv)'") >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
   source ~/.zprofile
-  echo -e "${STATUS_SUCCESS} Homebrew installed successfully!\n"
+  echo -e "${STATUS_SUCCESS} Homebrew installed successfully!"
 fi
 
 printf "\n"
 
-# # Ansbible
-# info "Installing Ansible"
-# if brew list ansible &>/dev/null; then
-#   success "Ansible already installed, skipping..."
-# else
-#   brew install ansible
-#   success "Ansible installed successfully!"
-# fi
+# Ansbible
+echo -e "${STATUS_INFO} Installing Ansible"
+if brew list ansible &>/dev/null; then
+  echo -e "${STATUS_SUCCESS} Ansible already installed, skipping..."
+else
+  brew install ansible
+  echo -e "${STATUS_SUCCESS} Ansible installed successfully!"
+fi
 
-# printf "\n"
+printf "\n"
 
 # # Directories
 # info "Setting up directories..."
