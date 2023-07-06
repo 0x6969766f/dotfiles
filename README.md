@@ -1,12 +1,19 @@
 Mmm... files
 
+<!--
 ```bash
 curl https://raw.githubusercontent.com/0x6969766f/dotfiles/main/bin/install.sh --output install.sh
 chmod +x install.sh
 sh install.sh
 ```
+-->
+
+```bash
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ALT-F4-LLC/dotfiles/main/bin/dotfiles)"
+```
 
 TODO:
+
 - https://github.com/ALT-F4-LLC/dotfiles
 
 TODO:
