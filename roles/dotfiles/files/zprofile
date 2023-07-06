@@ -1,2 +1,5 @@
 # Homebrew shell setup
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Fnm node manager
+eval "$(fnm env --use-on-cd)"

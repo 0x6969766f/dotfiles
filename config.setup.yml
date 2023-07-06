@@ -11,9 +11,6 @@
     - role: brew
       tags: ["brew"]
 
-    - role: fnm
-      tags: ["fnm"]
-
     - role: zsh
       tags: ["zsh"]
 
@@ -26,6 +23,9 @@
     - role: iterm
       tags: ["iterm"]
 
+    - role: fnm
+      tags: ["fnm"]
+
     - role: nvim
       tags: ["nvim"]
 
@@ -35,8 +35,8 @@
     - role: mas
       tags: ["mas"]
 
-    - role: osx
-      tags: ["osx"]
-
     - role: vscode
       tags: ["vscode"]
+
+    - role: osx
+      tags: ["osx"]
