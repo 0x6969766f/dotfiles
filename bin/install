@@ -53,6 +53,7 @@ info "Generating SSH keys..."
 if ! [[ -f "$SSH/authorized_keys" ]]; then
   mkdir -p "$SSH"
   ssh-keygen -t ed25519 -C "iivari.leinonen@gmail.com" -f "$SSH/id.personal"
+  cat "$SSH/id.personal.pub" >> "$SSH/authorized_keys"
   eval "$(ssh-agent -s)"
   echo "# Github
   Host github.com
