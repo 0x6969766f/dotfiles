@@ -98,7 +98,7 @@ printf "\n"
 info "Fetching dotfiles..."
 if ! [[ -d "$DOTFILES"  ]]; then
   mkdir -p "$DOTFILES"
-  git clone https://github.com:0x6969766f/dotfiles.git "$DOTFILES"
+  git clone https://github.com/0x6969766f/dotfiles.git "$DOTFILES"
 else
   git -C "$DOTFILES" pull
 fi
