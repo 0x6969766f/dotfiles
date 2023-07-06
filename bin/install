@@ -21,7 +21,7 @@ sudo -v
 cd && clear
 
 # Start
-info "Hello $(whoami)! Let's get you set up."
+echo -e "Hello $(whoami)! Let's get you set up."
 
 printf "\n"
 
