@@ -9,7 +9,7 @@ sh install.sh
 -->
 
 ```bash
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/0x6969766f/dotfiles/main/bin/dotfiles)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/0x6969766f/dotfiles/main/bin/dotfiles)"
 ```
 
 TODO:
