@@ -21,41 +21,6 @@ cd && clear
 
 printf "Hello $(whoami)! Let's get you set up.\n\n"
 
-# Command Line Tools
-# info "Installing macOS Command Line Tools"
-# Only run if the tools are not installed yet
-# To check that try to print the SDK path
-# xcode-select -p &> /dev/null
-# if [ $? -ne 0 ]; then
-#   echo "Command Line Tools for Xcode not found. Installing from softwareupdate…"
-#   # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
-#   touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
-#   PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
-#   softwareupdate -i "$PROD" --verbose;
-#   success "Command Line tools installed successfully!" 
-# else
-#   success "Command Line Tools already installed, skipping..."
-# fi
-
-# # Command Line Tools
-# info "Installing macOS Command Line Tools"
-# if [[ ! -x /usr/bin/gcc ]]; then
-#   xcode-select --install
-#   xcode-select --switch /Library/Developer/CommandLineTools
-#   success "Command Line tools installed successfully!"
-# else
-#   success "Command Line Tools already installed, skipping..."
-# fi
-
-# printf "\n"
-
-# # Rosetta
-# # Info "Installing Rosetta"
-# # /usr/bin/pgrep -q oahd && echo 'Rosetta already installed' || /usr/sbin/softwareupdate --install-rosetta --agree-to-license
-# # success "Rosetta installed successfully!"
-
-# # printf "\n"
-
 # Homebrew
 info "Installing Homebrew"
 which -s brew
