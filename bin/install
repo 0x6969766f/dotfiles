@@ -109,26 +109,11 @@ fi
 printf "\n"
 
 # Playbook
-info "Running playbook..."
-
-# Steps:
-# ) Get full directory path of this wrapper
-# ) Install Ansible requirements like roles and collections
-# ) Execute the Ansible playbook
-# SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-
-
-# ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg \
-#   ansible-galaxy install -r "${SCRIPTPATH}/config.requirements.yml" \
-#   &>/dev/null 
+info "Running Ansible playbook..."
 
 ANSIBLE_CONFIG="$DOTFILES/ansible.cfg" \
   ansible-galaxy install -r "$DOTFILES/config.requirements.yml" \
-  &>/dev/null 
-
-# ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg \
-#   ansible-playbook "${SCRIPTPATH}/config.setup.yml" \
-#   --ask-become-pass --tags "all"
+  &>/dev/null
 
 ANSIBLE_CONFIG="$DOTFILES/ansible.cfg" \
   ansible-playbook "$DOTFILES/config.setup.yml" \

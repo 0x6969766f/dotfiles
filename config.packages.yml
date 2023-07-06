@@ -86,5 +86,5 @@ vscode_packages:
   - Zignd.html-css-class-completion
 
 node_versions:
-  - latest
+  - 20.0.0
   - 18.06
