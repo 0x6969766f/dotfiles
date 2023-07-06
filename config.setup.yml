@@ -20,11 +20,11 @@
     - role: git
       tags: ["git"]
 
-    - role: iterm
-      tags: ["iterm"]
-
     - role: fnm
       tags: ["fnm"]
+
+    - role: iterm
+      tags: ["iterm"]
 
     - role: nvim
       tags: ["nvim"]
@@ -32,11 +32,11 @@
     - role: tmux
       tags: ["tmux"]
 
-    - role: mas
-      tags: ["mas"]
-
     - role: vscode
       tags: ["vscode"]
+
+    - role: mas
+      tags: ["mas"]
 
     - role: osx
       tags: ["osx"]

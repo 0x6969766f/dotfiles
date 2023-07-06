@@ -1,4 +1,10 @@
 ---
+- name: "[ iterm ] Create preferences directory"
+  ansible.builtin.file:
+    path: "~/.config/iterm2"
+    state: directory
+    mode: "0755"
+
 - name: "[ iterm ] Link preferences"
   ansible.builtin.file:
     src: "{{ ansible_env.PWD }}/roles/iterm/files/com.googlecode.iterm2.plist"

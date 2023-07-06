@@ -1,4 +1,10 @@
 ---
+- name: "[ tmux ] Create preferences directory"
+  ansible.builtin.file:
+    path: "~/.config/tmux"
+    state: directory
+    mode: "0755"
+
 - name: "[ tmux ] Link preferences"
   ansible.builtin.file:
     src: "{{ ansible_env.PWD }}/roles/tmux/files/tmux.conf"

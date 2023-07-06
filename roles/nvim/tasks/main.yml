@@ -1,4 +1,10 @@
 ---
+- name: "[ nvim ] Create preferences directory"
+  ansible.builtin.file:
+    path: "~/.config/nvim"
+    state: directory
+    mode: "0755"
+
 - name: "[ nvim ] Link preferences"
   ansible.builtin.file:
     src: "{{ ansible_env.PWD }}/roles/nvim/files/nvim"

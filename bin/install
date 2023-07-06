@@ -27,6 +27,7 @@ printf "\n"
 
 # Directories
 info "Setting up directories..."
+mkdir -p "$HOME/.config"
 mkdir -p "$HOME/Archives"
 mkdir -p "$HOME/Development"
 mkdir -p "$HOME/Development/personal"
