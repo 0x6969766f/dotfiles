@@ -3,6 +3,7 @@
 set -e
 
 # Paths
+SSH="$HOME/.ssh"
 DOTFILES="$HOME/.dotfiles"
 
 # Helpers
@@ -23,6 +24,17 @@ cd && clear
 info "Hello $(whoami)! Let's get you set up."
 printf "\n\n"
 
+# Directories
+info "Setting up directories..."
+mkdir -p "$HOME/Archives"
+mkdir -p "$HOME/Development"
+mkdir -p "$HOME/Development/personal"
+mkdir -p "$HOME/Development/work"
+mkdir -p "$HOME/Screenshots"
+success "Directories created successfully!"
+
+printf "\n"
+
 # Command Line Tools
 info "Installing Command Line Tools..."
 if xcode-select -p &> /dev/null; then
@@ -32,7 +44,26 @@ else
   xcode-select --switch /Library/Developer/CommandLineTools
   /usr/sbin/softwareupdate --install-rosetta --agree-to-license
   success "Command Line Tools installed successfully!"
-fi 
+fi
+
+printf "\n"
+
+# SSH
+info "Generating SSH keys..."
+if ! [[ -f "$SSH/authorized_keys" ]]; then
+  mkdir -p "$SSH"
+  ssh-keygen -t ed25519 -C "iivari.leinonen@gmail.com" -f "$SSH/id.personal"
+  eval "$(ssh-agent -s)"
+  echo "# Github
+  Host github.com
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id.personal
+    IgnoreUnknown UseKeychain" >> "$SSH/config"
+  ssh-add ~/.ssh/id.personal
+  success "SSH keys generated successfully!"
+else
+  success "SSH keys already generated, skipping..."
+fi
 
 printf "\n"
 
@@ -51,7 +82,7 @@ fi
 
 printf "\n"
 
-# Ansbible
+# Ansible
 info "Installing Ansible..."
 if brew list ansible &>/dev/null; then
   success "Ansible already installed, skipping..."
@@ -62,24 +93,13 @@ fi
 
 printf "\n"
 
-# Directories
-info "Setting up directories..."
-mkdir -p $HOME/Archives
-mkdir -p $HOME/Development
-mkdir -p $HOME/Development/personal
-mkdir -p $HOME/Development/work
-mkdir -p $HOME/Screenshots
-success "Directories created successfully!"
-
-printf "\n"
-
 # Dotfiles
 info "Fetching dotfiles..."
 if ! [[ -d "$DOTFILES"  ]]; then
-  mkdir -p $DOTFILES
-  git clone git@github.com:0x6969766f/dotfiles.git $DOTFILES
+  mkdir -p "$DOTFILES"
+  git clone git@github.com:0x6969766f/dotfiles.git "$DOTFILES"
 else
-  git -C $DOTFILES pull
+  git -C "$DOTFILES" pull
 fi
 success "Dotfiles fetched successfully!"
 
@@ -95,11 +115,11 @@ info "Running playbook..."
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg \
-  ansible-galaxy install -r ${SCRIPTPATH}/config.requirements.yml \
+  ansible-galaxy install -r "${SCRIPTPATH}/config.requirements.yml" \
   &>/dev/null 
 
 ANSIBLE_CONFIG=${SCRIPTPATH}/ansible.cfg \
-  ansible-playbook ${SCRIPTPATH}/config.setup.yml \
+  ansible-playbook "${SCRIPTPATH}/config.setup.yml" \
   --ask-become-pass --tags "all"
 
 success "Done!"
