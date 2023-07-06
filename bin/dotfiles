@@ -56,18 +56,18 @@ printf "Hello $(whoami)! Let's get you set up.\n\n"
 
 # # printf "\n"
 
-# # Homebrew
-# info "Installing Homebrew"
-# which -s brew
-# if [[ $? != 0 ]] ; then
-#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-#   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-#   eval "$(/opt/homebrew/bin/brew shellenv)"
-#   success "Homebrew installed successfully!"
-# else
-#   success "Homebrew already installed, updating..."
-#   brew update && brew upgrade
-# fi
+# Homebrew
+info "Installing Homebrew"
+which -s brew
+if [[ $? != 0 ]] ; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  success "Homebrew installed successfully!"
+else
+  success "Homebrew already installed, updating..."
+  brew update && brew upgrade
+fi
 
 # printf "\n"
 
