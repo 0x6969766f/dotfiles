@@ -17,6 +17,9 @@ autoload -U colors && colors
 export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
+# Yellow (temp) autosuggested string
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
+
 # Load plugins
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
@@ -35,6 +38,18 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Fnm node manager
 eval "$(fnm env --use-on-cd)"
+
+# Nvim
+alias vi="nvim"
+alias vim="nvim"
+
+# Be nice
+alias please="sudo "
+
+# Easier navigation: .., ..., ....
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
