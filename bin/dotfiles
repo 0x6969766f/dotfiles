@@ -56,6 +56,12 @@ printf "Hello $(whoami)! Let's get you set up.\n\n"
 
 # # printf "\n"
 
+# Command Line Tools
+info "Installing macOS Command Line Tools"
+xcode-select --install
+sudo xcodebuild -license
+/usr/sbin/softwareupdate --install-rosetta
+
 # Homebrew
 info "Installing Homebrew"
 which -s brew
