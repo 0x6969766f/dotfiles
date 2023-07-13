@@ -29,6 +29,7 @@ cask_packages:
   - raycast
   - slack
   - spotify
+  - thunderbird
   - zoom
   # development
   - figma
