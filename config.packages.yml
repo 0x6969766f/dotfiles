@@ -14,7 +14,6 @@ brew_packages:
   - ripgrep
   - tmux
   - wget
-  - xdg-ninja
   - yarn
   - zplug
 
