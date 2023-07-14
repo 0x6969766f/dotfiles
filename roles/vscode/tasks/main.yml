@@ -11,3 +11,10 @@
     path: "~/Library/Application\ Support/Code/User/settings.json"
     state: link
     force: yes
+
+- name: "[vscode ] Update keybindings"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/vscode/files/keybindings.json"
+    path: "~/Library/Application\ Support/Code/User/keybindings.json"
+    state: link
+    force: yes
