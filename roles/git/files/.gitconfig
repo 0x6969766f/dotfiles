@@ -1,10 +1,10 @@
 # ~/.gitconfig
 
-[includeIf "gitdir/i:~/.dotfiles"]
-    path = ~/Development/personal/.gitconfig
+[includeIf "gitdir/i:~/.dotfiles/"]
+    path = ~/.config/git/.personal
 
 [includeIf "gitdir/i:~/Development/personal/"]
-    path = ~/Development/personal/.gitconfig
+    path = ~/.config/git/.personal
   
 [includeIf "gitdir/i:~/Development/work/"]
-    path = ~/Development/work/.gitconfig
+    path = ~/.config/git/.work

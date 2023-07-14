@@ -1,18 +1,19 @@
 ---
-- name: "[ git ] Move .gitconfig"
-  ansible.builtin.copy:
+- name: "[ git ] Link root config"
+  ansible.builtin.file:
     src: "{{ ansible_env.PWD }}/roles/git/files/.gitconfig"
-    dest: "~/.gitconfig"
+    path: "~/.gitconfig"
+    state: link
     force: yes
 
-- name: "[ git ] Move .gitconfig (personal)"
-  ansible.builtin.copy:
-    src: "{{ ansible_env.PWD }}/roles/git/files/personal/.gitconfig"
-    dest: "~/Development/personal/.gitconfig"
-    force: yes
+- name: "[ git ] Create config directory"
+  ansible.builtin.file:
+    path: "~/.config/git"
+    state: directory
+    mode: "0755"
 
-- name: "[ git ] Move .gitconfig (work)"
-  ansible.builtin.copy:
-    src: "{{ ansible_env.PWD }}/roles/git/files/work/.gitconfig"
-    dest: "~/Development/work/.gitconfig"
+- name: "[ git ] Link config profiles"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/git/files/git"
+    dest: "~/.config/git"
     force: yes
