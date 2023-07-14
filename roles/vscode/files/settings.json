@@ -93,7 +93,6 @@
     // FILE TREE
     {
       "before": ["leader", "e"],
-      // "commands": ["workbench.explorer.fileView.focus"]
       "commands": ["workbench.view.explorer"]
     },
 
@@ -113,6 +112,15 @@
     { "before": ["<S-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<S-k>"], "commands": ["editor.action.moveLinesUpAction"] },
     // toggle comment selection
-    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] },
+    // sort
+    {
+      "before": ["<S-a>"],
+      "commands": ["editor.action.sortLinesAscending"]
+    },
+    {
+      "before": ["<S-d>"],
+      "commands": ["editor.action.sortLinesDescending"]
+    }
   ]
 }
