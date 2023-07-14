@@ -16,4 +16,5 @@
   ansible.builtin.file:
     src: "{{ ansible_env.PWD }}/roles/git/files/git"
     dest: "~/.config/git"
+    state: link
     force: yes
