@@ -65,6 +65,7 @@ vscode_packages:
   - naumovs.color-highlight
   - Prisma.prisma
   - tamasfe.even-better-toml
+  - tobias-z.vscode-harpoon
   - vscodevim.vim
   - wayou.vscode-todo-highlight
   - wengerk.highlight-bad-chars

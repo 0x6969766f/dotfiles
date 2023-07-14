@@ -90,6 +90,36 @@
       "commands": ["workbench.action.focusRightGroup"]
     },
 
+    // HARPOON
+    {
+      "before": ["leader", "h", "a"],
+      "commands": ["vscode-harpoon.addEditor"]
+    },
+    {
+      "before": ["leader", "h", "e"],
+      "commands": ["vscode-harpoon.editEditors"]
+    },
+    {
+      "before": ["leader", "h", "q"],
+      "commands": ["vscode-harpoon.editorQuickPick"]
+    },
+    {
+      "before": ["leader", "h", "1"],
+      "commands": ["vscode-harpoon.gotoEditor1"]
+    },
+    {
+      "before": ["leader", "h", "2"],
+      "commands": ["vscode-harpoon.gotoEditor2"]
+    },
+    {
+      "before": ["leader", "h", "3"],
+      "commands": ["vscode-harpoon.gotoEditor3"]
+    },
+    {
+      "before": ["leader", "h", "4"],
+      "commands": ["vscode-harpoon.gotoEditor4"]
+    },
+
     // FILE TREE
     {
       "before": ["leader", "e"],
