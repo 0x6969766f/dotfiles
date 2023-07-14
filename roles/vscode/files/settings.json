@@ -1,4 +1,5 @@
 {
+  // Linting
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -11,21 +12,30 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
 
-  "atomKeymap.promptV3Features": true,
-
+  // Formatting
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.eslint": true,
     "source.organizeImports": false
   },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+
+  // UI
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": false,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 
   "editor.cursorStyle": "block",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrainsMonoNFM-Regular, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.lineNumbers": "relative",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -33,8 +43,16 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "wordWrapColumn",
 
-  "eslint.format.enable": true,
+  // Theme
+  "workbench.colorTheme": "Catppuccin Mocha",
 
+  // Misc
+  "search.showLineNumbers": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "vim.smartRelativeLine": true,
+  "window.zoomLevel": 1,
+
+  // Copilot
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
@@ -42,12 +60,59 @@
     "markdown": false
   },
 
-  "search.showLineNumbers": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "vim.smartRelativeLine": true,
-  "window.zoomLevel": 1,
+  // VIM
+  "vim.leader": "<Space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<tab>"], "commands": [":bnext"] },
+    { "before": ["<S-tab>"], "commands": [":bprevious"] },
 
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    // FILE TREE
+    {
+      "before": ["leader", "e"],
+      // "commands": ["workbench.explorer.fileView.focus"]
+      "commands": ["workbench.view.explorer"]
+    },
+
+    // NICE TO HAVE
+    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
+    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
+    {
+      "before": ["leader", "<S-p>"],
+      "commands": ["workbench.action.showCommands"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Stay in visual mode while indenting
+    { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
+    { "before": ["<S-tab>"], "commands": ["editor.action.outdentLines"] },
+    // Move selected lines while staying in visual mode
+    { "before": ["<S-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<S-k>"], "commands": ["editor.action.moveLinesUpAction"] },
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ]
 }
