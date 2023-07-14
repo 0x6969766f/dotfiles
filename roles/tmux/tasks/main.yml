@@ -7,7 +7,7 @@
 
 - name: "[ tmux ] Link preferences"
   ansible.builtin.file:
-    src: "{{ ansible_env.PWD }}/roles/tmux/files/tmux.conf"
-    path: "~/.config/tmux/tmux.conf"
+    src: "{{ ansible_env.PWD }}/roles/tmux/files/tmux"
+    path: "~/.config/tmux"
     state: link
     force: yes
