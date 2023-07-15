@@ -1,5 +1,5 @@
 {
-  // Linting
+  // -- formatting and linting --
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -12,17 +12,17 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
 
-  // Formatting
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.eslint": true,
     "source.organizeImports": false
   },
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "eslint.format.enable": true,
 
-  // UI
+  // -- ui --
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
   "workbench.activityBar.visible": false,
@@ -31,28 +31,33 @@
 
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 
-  "editor.cursorStyle": "block",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "JetBrainsMonoNFM-Regular, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 13,
-  "editor.inlineSuggest.enabled": true,
-  "editor.lineNumbers": "relative",
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.scrollBeyondLastLine": false,
   "editor.tabSize": 2,
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "JetBrainsMonoNFM-Regular, Menlo, Monaco, 'Courier New', monospace",
+
+  "editor.cursorStyle": "block",
+  "editor.multiCursorModifier": "ctrlCmd",
+
+  "editor.rulers": [80],
   "editor.wordWrap": "wordWrapColumn",
 
-  // Theme
+  "editor.lineNumbers": "relative",
+  "search.showLineNumbers": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.suggest.insertMode": "replace",
+
+  // -- theme --
   "workbench.colorTheme": "Catppuccin Mocha",
 
-  // Misc
-  "search.showLineNumbers": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "vim.smartRelativeLine": true,
+  // -- misc --
   "window.zoomLevel": 1,
+  "editor.inlineSuggest.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
 
-  // Copilot
+  // -- copilot --
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
@@ -60,19 +65,29 @@
     "markdown": false
   },
 
-  // VIM
+  // -- vim --
   "vim.leader": "<Space>",
+  "vim.smartRelativeLine": true,
+  "vim.foldfix": true,
+  "vim.hlsearch": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(255, 97, 239, 0.7)",
+  "vim.highlightedyank.textColor": "white",
   "vim.normalModeKeyBindingsNonRecursive": [
-    // NAVIGATION
-    // switch b/w buffers
-    { "before": ["<tab>"], "commands": [":bnext"] },
-    { "before": ["<S-tab>"], "commands": [":bprevious"] },
+    // -- buffers --
+    { "before": ["leader", "b", "n"], "commands": [":bnext"] },
+    { "before": ["leader", "b", "p"], "commands": [":bprevious"] },
 
-    // splits
-    { "before": ["leader", "v"], "commands": [":vsplit"] },
-    { "before": ["leader", "s"], "commands": [":split"] },
+    // -- splits --
+    { "before": ["leader", "s", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s", "h"], "commands": [":split"] },
 
-    // panes
+    // -- hover --
+    // { "before": ["leader", "p"], "commands": ["editor.action.showHover"] },
+
+    // -- panes --
     {
       "before": ["leader", "h"],
       "commands": ["workbench.action.focusLeftGroup"]
@@ -90,43 +105,57 @@
       "commands": ["workbench.action.focusRightGroup"]
     },
 
-    // HARPOON
+    // -- harpoon --
     {
-      "before": ["leader", "h", "a"],
+      "before": ["leader", "r", "a"],
       "commands": ["vscode-harpoon.addEditor"]
     },
     {
-      "before": ["leader", "h", "e"],
+      "before": ["leader", "r", "e"],
       "commands": ["vscode-harpoon.editEditors"]
     },
     {
-      "before": ["leader", "h", "q"],
+      "before": ["leader", "r", "q"],
       "commands": ["vscode-harpoon.editorQuickPick"]
     },
     {
-      "before": ["leader", "h", "1"],
+      "before": ["leader", "r", "1"],
       "commands": ["vscode-harpoon.gotoEditor1"]
     },
     {
-      "before": ["leader", "h", "2"],
+      "before": ["leader", "r", "2"],
       "commands": ["vscode-harpoon.gotoEditor2"]
     },
     {
-      "before": ["leader", "h", "3"],
+      "before": ["leader", "r", "3"],
       "commands": ["vscode-harpoon.gotoEditor3"]
     },
     {
-      "before": ["leader", "h", "4"],
+      "before": ["leader", "r", "4"],
       "commands": ["vscode-harpoon.gotoEditor4"]
     },
 
-    // FILE TREE
+    // -- explorer --
     {
       "before": ["leader", "e"],
       "commands": ["workbench.view.explorer"]
     },
 
-    // NICE TO HAVE
+    // -- project manager --
+    {
+      "before": ["leader", "o"],
+      "commands": ["projectManager.listGitProjects#sideBarGit"]
+    },
+
+    // -- expand-selection --
+    { "before": ["leader", "+"], "commands": ["expand_region"] },
+    { "before": ["leader", "-"], "commands": ["undo_expand_region"] },
+
+    // -- nice to have --
+    {
+      "before": ["leader", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
     { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
     { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
     {
@@ -135,15 +164,15 @@
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
-    // Stay in visual mode while indenting
+    // -- stay in visual mode while indenting --
     { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
     { "before": ["<S-tab>"], "commands": ["editor.action.outdentLines"] },
-    // Move selected lines while staying in visual mode
+    // -- move selected lines --
     { "before": ["<S-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<S-k>"], "commands": ["editor.action.moveLinesUpAction"] },
-    // toggle comment selection
+    // -- toggle comment selection --
     { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] },
-    // sort
+    // -- sorting --
     {
       "before": ["<S-a>"],
       "commands": ["editor.action.sortLinesAscending"]
@@ -152,5 +181,9 @@
       "before": ["<S-d>"],
       "commands": ["editor.action.sortLinesDescending"]
     }
-  ]
+  ],
+
+  // -- project manager --
+  "projectManager.sortList": "Name",
+  "projectManager.git.baseFolders": ["$home/.dotfiles", "$home/Development"]
 }

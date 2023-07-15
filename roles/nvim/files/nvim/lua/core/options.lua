@@ -33,6 +33,8 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- search
+opt.hlsearch = false
+opt.incsearch = true 
 opt.ignorecase = true
 opt.smartcase = true
 opt.scrolloff = 10

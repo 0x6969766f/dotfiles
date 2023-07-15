@@ -1,50 +1,69 @@
-// Place your key bindings in this file to override the defaults
 [
-  // NAVIGATION
+  // -- explorer --
+  {
+    "key": "space e",
+    "command": "workbench.view.explorer",
+    "when": "!filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
   {
     "key": "shift+a",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "shift+b",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "shift+t",
-    "command": "workbench.action.togglePanel"
-  },
-  {
-    "key": "shift+n",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalFocus"
-  },
-
-  // FILE TREE
-  {
-    "key": "escape",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "d",
     "command": "deleteFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  }
+    "when": "filesExplorerFocus && !inputFocus"
+  },
   {
     "key": "c",
     "command": "filesExplorer.copy",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "p",
     "command": "filesExplorer.paste",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "f",
     "command": "filesExplorer.findInFolder",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  },
+    "when": "filesExplorerFocus && !inputFocus"
+  }
+
+  // -- terminal --
+  // {
+  //   "key": "shift+a",
+  //   "command": "workbench.action.terminal.focusNext",
+  //   "when": "terminalFocus"
+  // },
+  // {
+  //   "key": "shift+b",
+  //   "command": "workbench.action.terminal.focusPrevious",
+  //   "when": "terminalFocus"
+  // },
+  // {
+  //   "key": "shift+t",
+  //   "command": "workbench.action.togglePanel"
+  // },
+  // {
+  //   "key": "shift+n",
+  //   "command": "workbench.action.terminal.new",
+  //   "when": "terminalFocus"
+  // }
 ]
