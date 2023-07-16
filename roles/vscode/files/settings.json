@@ -85,7 +85,7 @@
     { "before": ["leader", "s", "h"], "commands": [":split"] },
 
     // -- hover --
-    // { "before": ["leader", "p"], "commands": ["editor.action.showHover"] },
+    { "before": ["leader", "a", "h"], "commands": ["editor.action.showHover"] },
 
     // -- panes --
     {
