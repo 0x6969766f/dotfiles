@@ -185,5 +185,11 @@
 
   // -- project manager --
   "projectManager.sortList": "Name",
-  "projectManager.git.baseFolders": ["$home/.dotfiles", "$home/Development"]
+  "projectManager.git.baseFolders": [
+    "$home/.dotfiles",
+    "$home/Development/personal",
+    "$home/Development/work"
+  ],
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false
 }
