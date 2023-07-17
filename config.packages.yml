@@ -59,6 +59,7 @@ vscode_packages:
   - eamodio.gitlens
   - esbenp.prettier-vscode
   - GitHub.copilot
+  - golang.go
   - letrieu.expand-region
   - lllllllqw.jsdoc
   - mariusschulz.yarn-lock-syntax
