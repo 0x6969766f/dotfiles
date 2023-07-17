@@ -191,5 +191,6 @@
     "$home/Development/work"
   ],
   "totalTypeScript.hideAllTips": false,
-  "totalTypeScript.hideBasicTips": false
+  "totalTypeScript.hideBasicTips": false,
+  "workbench.iconTheme": "catppuccin-mocha"
 }

@@ -54,6 +54,7 @@ vscode_packages:
   - astro-build.astro-vscode
   - bradlc.vscode-tailwindcss
   - Catppuccin.catppuccin-vsc
+  - Catppuccin.catppuccin-vsc-icons
   - dbaeumer.vscode-eslint
   - eamodio.gitlens
   - esbenp.prettier-vscode
