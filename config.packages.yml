@@ -22,6 +22,7 @@ cask_packages:
   - 1password
   - arc
   - bartender
+  - backblaze
   - discord
   - firefox
   - notion
