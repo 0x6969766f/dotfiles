@@ -39,9 +39,16 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 
   "editor.tabSize": 2,
-  "editor.fontSize": 13,
   "editor.fontLigatures": true,
   "editor.fontFamily": "JetBrainsMonoNFM-Regular, Menlo, Monaco, 'Courier New', monospace",
+
+  "editor.fontSize": 12,
+  "terminal.integrated.fontSize": 12,
+  "debug.console.fontSize": 12,
+  "chat.editor.fontSize": 12,
+  "scm.inputFontSize": 12,
+
+  "window.zoomLevel": 1,
 
   "editor.cursorStyle": "block",
   "editor.multiCursorModifier": "ctrlCmd",
