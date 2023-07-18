@@ -76,6 +76,7 @@ vscode_packages:
   - tobias-z.vscode-harpoon
   - usernamehw.errorlens
   - vscodevim.vim
+  - VSpaceCode.whichkey
   - wayou.vscode-todo-highlight
   - wengerk.highlight-bad-chars
   - Zignd.html-css-class-completion

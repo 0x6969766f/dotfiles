@@ -75,77 +75,67 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "rgba(255, 97, 239, 0.7)",
   "vim.highlightedyank.textColor": "white",
+
+  // -- normal mode --
   "vim.normalModeKeyBindingsNonRecursive": [
     // -- buffers --
-    { "before": ["leader", "b", "n"], "commands": [":bnext"] },
-    { "before": ["leader", "b", "p"], "commands": [":bprevious"] },
+    { "before": ["<C-n>"], "commands": [":bnext"] },
+    { "before": ["<C-b>"], "commands": [":bprevious"] },
 
     // -- splits --
-    { "before": ["leader", "s", "v"], "commands": [":vsplit"] },
-    { "before": ["leader", "s", "h"], "commands": [":split"] },
-
-    // -- hover --
-    { "before": ["leader", "a", "h"], "commands": ["editor.action.showHover"] },
+    { "before": ["leader", "<C-v>"], "commands": [":vsplit"] },
+    { "before": ["leader", "<C-h>"], "commands": [":split"] },
 
     // -- panes --
-    {
-      "before": ["leader", "h"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["leader", "j"],
-      "commands": ["workbench.action.focusBelowGroup"]
-    },
-    {
-      "before": ["leader", "k"],
-      "commands": ["workbench.action.focusAboveGroup"]
-    },
-    {
-      "before": ["leader", "l"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
+    { "before": ["<C-h>"], "commands": ["workbench.action.focusLeftGroup"] },
+    { "before": ["<C-j>"], "commands": ["workbench.action.focusBelowGroup"] },
+    { "before": ["<C-k>"], "commands": ["workbench.action.focusAboveGroup"] },
+    { "before": ["<C-l>"], "commands": ["workbench.action.focusRightGroup"] },
 
     // -- harpoon --
+    { "before": ["leader", "<C-a>"], "commands": ["vscode-harpoon.addEditor"] },
     {
-      "before": ["leader", "r", "a"],
-      "commands": ["vscode-harpoon.addEditor"]
-    },
-    {
-      "before": ["leader", "r", "e"],
+      "before": ["leader", "<C-e>"],
       "commands": ["vscode-harpoon.editEditors"]
     },
     {
-      "before": ["leader", "r", "q"],
+      "before": ["leader", "<C-q>"],
       "commands": ["vscode-harpoon.editorQuickPick"]
     },
     {
-      "before": ["leader", "r", "1"],
+      "before": ["<C-a>"],
       "commands": ["vscode-harpoon.gotoEditor1"]
     },
     {
-      "before": ["leader", "r", "2"],
+      "before": ["<C-s>"],
       "commands": ["vscode-harpoon.gotoEditor2"]
     },
     {
-      "before": ["leader", "r", "3"],
+      "before": ["<C-d>"],
       "commands": ["vscode-harpoon.gotoEditor3"]
     },
     {
-      "before": ["leader", "r", "4"],
+      "before": ["<C-f>"],
       "commands": ["vscode-harpoon.gotoEditor4"]
     },
 
+    // -- hover --
+    { "before": ["<C-.>"], "commands": ["editor.action.showHover"] },
+
     // -- explorer --
     {
-      "before": ["leader", "e"],
+      "before": ["<C-f>"],
       "commands": ["workbench.view.explorer"]
     },
 
     // -- project manager --
     {
-      "before": ["leader", "o"],
+      "before": ["<C-o>"],
       "commands": ["projectManager.listGitProjects#sideBarGit"]
     },
+
+    // -- which key --
+    { "before": ["<C-w>"], "commands": ["whichkey.show"] },
 
     // -- expand-selection --
     { "before": ["leader", "+"], "commands": ["expand_region"] },
@@ -163,6 +153,8 @@
       "commands": ["workbench.action.showCommands"]
     }
   ],
+
+  // -- visual mode --
   "vim.visualModeKeyBindingsNonRecursive": [
     // -- stay in visual mode while indenting --
     { "before": ["<tab>"], "commands": ["editor.action.indentLines"] },
@@ -171,7 +163,7 @@
     { "before": ["<S-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<S-k>"], "commands": ["editor.action.moveLinesUpAction"] },
     // -- toggle comment selection --
-    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] },
+    { "before": ["<S-c>"], "commands": ["editor.action.commentLine"] },
     // -- sorting --
     {
       "before": ["<S-a>"],
@@ -180,7 +172,9 @@
     {
       "before": ["<S-d>"],
       "commands": ["editor.action.sortLinesDescending"]
-    }
+    },
+    // -- which key --
+    { "before": ["<C-e>"], "commands": ["whichkey.show"] }
   ],
 
   // -- project manager --
