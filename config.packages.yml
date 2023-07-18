@@ -8,6 +8,7 @@ brew_packages:
   - docker
   - fnm
   - go
+  - golangci-lint
   - mas
   - neovim
   - pnpm
