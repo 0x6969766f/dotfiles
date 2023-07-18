@@ -51,9 +51,6 @@
 
   // -- theme --
   "workbench.colorTheme": "Catppuccin Mocha",
-
-  // -- misc --
-  "window.zoomLevel": 1,
   "editor.inlineSuggest.enabled": true,
   "security.workspace.trust.untrustedFiles": "open",
 
@@ -83,8 +80,8 @@
     { "before": ["<C-b>"], "commands": [":bprevious"] },
 
     // -- splits --
-    { "before": ["leader", "<C-v>"], "commands": [":vsplit"] },
-    { "before": ["leader", "<C-h>"], "commands": [":split"] },
+    { "before": ["leader", "s"], "commands": [":vsplit"] },
+    { "before": ["leader", "<S-s>"], "commands": [":split"] },
 
     // -- panes --
     { "before": ["<C-h>"], "commands": ["workbench.action.focusLeftGroup"] },
@@ -119,12 +116,9 @@
       "commands": ["vscode-harpoon.gotoEditor4"]
     },
 
-    // -- hover --
-    { "before": ["<C-.>"], "commands": ["editor.action.showHover"] },
-
     // -- explorer --
     {
-      "before": ["<C-f>"],
+      "before": ["<C-e>"],
       "commands": ["workbench.view.explorer"]
     },
 
@@ -186,5 +180,6 @@
   ],
   "totalTypeScript.hideAllTips": false,
   "totalTypeScript.hideBasicTips": false,
-  "workbench.iconTheme": "catppuccin-mocha"
+  "workbench.iconTheme": "catppuccin-mocha",
+  "git.openRepositoryInParentFolders": "always"
 }

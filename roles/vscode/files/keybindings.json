@@ -1,12 +1,12 @@
 [
   // -- explorer --
   {
-    "key": "ctrl+f",
+    "key": "ctrl+e",
     "command": "workbench.view.explorer",
     "when": "!filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "ctrl+f",
+    "key": "ctrl+e",
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "filesExplorerFocus && !inputFocus"
   },
@@ -56,6 +56,12 @@
     "key": "ctrl+w",
     "command": "whichkey.show",
     "when": "sideBarFocus && !inputFocus && !whichkeyActive"
+  },
+
+  // -- project manager --
+  {
+    "key": "ctrl+o",
+    "command": "projectManager.listGitProjects#sideBarGit"
   },
 
   // -- quick open/QuickPick --
@@ -129,15 +135,15 @@
   },
 
   // -- terminal --
-  // {
-  //   "key": "space ctrl+t",
-  //   "command": "workbench.action.togglePanel"
-  // },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.togglePanel"
+  },
   {
     "key": "ctrl+a",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
-  }
+  },
   {
     "key": "ctrl+n",
     "command": "workbench.action.terminal.focusNext",
@@ -147,5 +153,5 @@
     "key": "ctrl+b",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
-  },
+  }
 ]
