@@ -142,17 +142,19 @@
     { "before": ["leader", "+"], "commands": ["expand_region"] },
     { "before": ["leader", "-"], "commands": ["undo_expand_region"] },
 
+    // -- quick open --
+    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
+    {
+      "before": ["leader", "<S-p>"],
+      "commands": ["workbench.action.showCommands"]
+    },
+
     // -- nice to have --
     {
       "before": ["leader", "x"],
       "commands": ["workbench.action.closeActiveEditor"]
     },
-    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
-    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
-    {
-      "before": ["leader", "<S-p>"],
-      "commands": ["workbench.action.showCommands"]
-    }
+    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] }
   ],
 
   // -- visual mode --
