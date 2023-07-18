@@ -58,6 +58,7 @@
 
   // -- theme --
   "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
   "editor.inlineSuggest.enabled": true,
   "security.workspace.trust.untrustedFiles": "open",
 
@@ -187,8 +188,12 @@
     "$home/Development/personal",
     "$home/Development/work"
   ],
+
+  // -- total typescript --
   "totalTypeScript.hideAllTips": false,
   "totalTypeScript.hideBasicTips": false,
-  "workbench.iconTheme": "catppuccin-mocha",
+
+  // -- gitlens --
+  "gitlens.statusBar.alignment": "left",
   "git.openRepositoryInParentFolders": "always"
 }
