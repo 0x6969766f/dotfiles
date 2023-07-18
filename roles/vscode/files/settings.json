@@ -29,6 +29,13 @@
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
 
+  "explorer.openEditors.visible": 0,
+  "workbench.editor.showTabs": false,
+  "workbench.editor.enablePreview": false,
+
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 
   "editor.tabSize": 2,
