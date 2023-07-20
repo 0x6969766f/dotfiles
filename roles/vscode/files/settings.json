@@ -12,6 +12,14 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
 
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false
+    },
+    "editor.defaultFormatter": "golang.go"
+  },
+
   "eslint.format.enable": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
