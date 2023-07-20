@@ -49,6 +49,7 @@
   "scm.inputFontSize": 12,
 
   "window.zoomLevel": 1,
+  "editor.cursorSurroundingLines": 15,
 
   "editor.cursorStyle": "block",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -61,20 +62,21 @@
   "editor.scrollBeyondLastLine": true,
   "editor.stickyScroll.enabled": true,
   "editor.linkedEditing": true,
+  "editor.inlineSuggest.enabled": true,
   "editor.suggest.insertMode": "replace",
 
   // -- theme --
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
-  "editor.inlineSuggest.enabled": true,
   "security.workspace.trust.untrustedFiles": "open",
 
   // -- copilot --
   "github.copilot.enable": {
     "*": true,
-    "yaml": true,
     "plaintext": false,
-    "markdown": false
+    "markdown": false,
+    "scminput": false,
+    "yaml": true
   },
 
   // -- vim --
@@ -203,6 +205,5 @@
 
   // -- gitlens --
   "gitlens.statusBar.alignment": "left",
-  "git.openRepositoryInParentFolders": "always",
-  "editor.cursorSurroundingLines": 15
+  "git.openRepositoryInParentFolders": "always"
 }
