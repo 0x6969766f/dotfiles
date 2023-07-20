@@ -60,6 +60,8 @@ vscode_packages:
   - eamodio.gitlens
   - esbenp.prettier-vscode
   - GitHub.copilot
+  - GitHub.copilot-chat
+  - GitHub.copilot-labs
   - golang.go
   - letrieu.expand-region
   - lllllllqw.jsdoc
