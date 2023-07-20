@@ -43,6 +43,7 @@
 
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.horizontal": "hidden",
+  "workbench.panel.defaultLocation": "right",
 
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 
