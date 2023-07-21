@@ -127,19 +127,19 @@
       "commands": ["vscode-harpoon.editorQuickPick"]
     },
     {
-      "before": ["<C-a>"],
+      "before": ["<C-1>"],
       "commands": ["vscode-harpoon.gotoEditor1"]
     },
     {
-      "before": ["<C-s>"],
+      "before": ["<C-2>"],
       "commands": ["vscode-harpoon.gotoEditor2"]
     },
     {
-      "before": ["<C-d>"],
+      "before": ["<C-3>"],
       "commands": ["vscode-harpoon.gotoEditor3"]
     },
     {
-      "before": ["<C-f>"],
+      "before": ["<C-4>"],
       "commands": ["vscode-harpoon.gotoEditor4"]
     },
 

@@ -68,6 +68,28 @@
     "when": "sideBarFocus && !inputFocus && !whichkeyActive"
   },
 
+  // -- harpoon --
+  {
+    "key": "ctrl+1",
+    "command": "vscode-harpoon.gotoEditor1",
+    "when": "!inputFocus"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "vscode-harpoon.gotoEditor2",
+    "when": "!inputFocus"
+  },
+  {
+    "key": "ctrl+3",
+    "command": "vscode-harpoon.gotoEditor3",
+    "when": "!inputFocus"
+  },
+  {
+    "key": "ctrl+4",
+    "command": "vscode-harpoon.gotoEditor4",
+    "when": "!inputFocus"
+  },
+
   // -- project manager --
   {
     "key": "ctrl+o",
