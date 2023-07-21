@@ -11,6 +11,11 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
+    "key": "enter",
+    "command": "filesExplorer.openFilePreserveFocus",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
     "key": "a",
     "command": "explorer.newFile",
     "when": "filesExplorerFocus && !inputFocus"
@@ -33,6 +38,11 @@
   {
     "key": "c",
     "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+e",
+    "command": "filesExplorer.cut",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
