@@ -169,6 +169,9 @@
       "commands": ["workbench.action.showCommands"]
     },
 
+    // -- hover ---
+    { "before": ["leader", "<S-h>"], "commands": ["editor.action.showHover"] },
+
     // -- nice to have --
     {
       "before": ["leader", "x"],
