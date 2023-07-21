@@ -3,6 +3,9 @@
 [includeIf "gitdir/i:~/.dotfiles/"]
     path = ~/.config/git/.personal
 
+[includeIf "gitdir/i:~/Development/learning/"]
+    path = ~/.config/git/.personal
+
 [includeIf "gitdir/i:~/Development/personal/"]
     path = ~/.config/git/.personal
   
