@@ -5,7 +5,6 @@ brew_taps:
 
 brew_packages:
   - ansible
-  - docker
   - fnm
   - go
   - golangci-lint
