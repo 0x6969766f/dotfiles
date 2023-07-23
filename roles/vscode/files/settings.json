@@ -36,6 +36,8 @@
   "workbench.activityBar.visible": false,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
 
   "explorer.openEditors.visible": 0,
   "workbench.editor.showTabs": false,
