@@ -58,8 +58,6 @@
   "debug.console.fontSize": 12,
   "chat.editor.fontSize": 12,
   "scm.inputFontSize": 12,
-
-  "window.zoomLevel": 1,
   "editor.cursorSurroundingLines": 15,
 
   "editor.cursorStyle": "block",
@@ -219,5 +217,9 @@
 
   // -- gitlens --
   "gitlens.statusBar.alignment": "left",
-  "git.openRepositoryInParentFolders": "always"
+  "git.openRepositoryInParentFolders": "always",
+  "window.zoomLevel": 1,
+
+  // -- svelte --
+  "svelte.enable-ts-plugin": true
 }

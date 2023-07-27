@@ -74,6 +74,7 @@ vscode_packages:
   - naumovs.color-highlight
   - Orta.vscode-twoslash-queries
   - Prisma.prisma
+  - svelte.svelte-vscode
   - tamasfe.even-better-toml
   - tobias-z.vscode-harpoon
   - usernamehw.errorlens
