@@ -68,7 +68,6 @@ vscode_packages:
   - mattpocock.ts-error-translator
   - meganrogge.template-string-converter
   - mikestead.dotenv
-  - moalamri.inline-fold
   - ms-azuretools.vscode-docker
   - ms-vscode-remote.remote-containers
   - ms-vscode.makefile-tools
