@@ -31,7 +31,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Fnm node manager
 eval "$(fnm env --use-on-cd)"
 
-# GO
+# Eza
+alias ls="eza -l --icons"
+
+# Go
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
