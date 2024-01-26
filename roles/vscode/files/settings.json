@@ -15,7 +15,7 @@
   "[go]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": false
+      "source.organizeImports": "never"
     },
     "editor.defaultFormatter": "golang.go"
   },
@@ -25,22 +25,21 @@
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
 
   // -- ui --
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.layoutControl.enabled": false,
   "window.commandCenter": false,
 
   "explorer.openEditors.visible": 0,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "workbench.editor.enablePreview": false,
 
   "editor.scrollbar.vertical": "hidden",
@@ -224,5 +223,6 @@
   "svelte.enable-ts-plugin": true,
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
-  }
+  },
+  "workbench.activityBar.location": "hidden"
 }

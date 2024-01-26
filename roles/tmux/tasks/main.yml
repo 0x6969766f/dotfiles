@@ -11,3 +11,6 @@
     path: "~/.config/tmux"
     state: link
     force: yes
+
+- name: "[ tmux ] Install tpm"
+  ansible.builtin.command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
