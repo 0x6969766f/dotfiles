@@ -13,4 +13,4 @@
     force: yes
 
 - name: "[ tmux ] Install tpm"
-  ansible.builtin.command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ansible.builtin.command: git clone https://github.com/tmux-plugins/tpm {{ ansible_env.PWD }}/roles/tmux/files/tmux/plugins/tpm
