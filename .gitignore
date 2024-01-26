@@ -3,3 +3,7 @@
 
 # vim
 *.swp
+
+# tmux plugins
+roles/tmux/files/tmux/plugins/*
+!roles/tmux/files/tmux/plugins/.gitkeep
