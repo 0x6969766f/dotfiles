@@ -5,7 +5,7 @@ brew_taps:
 
 brew_packages:
   - ansible
-  - exa
+  - eza
   - fnm
   - go
   - golangci-lint
