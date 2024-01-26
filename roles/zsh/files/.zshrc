@@ -28,11 +28,11 @@ zplug load
 # Homebrew shell setup
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Fnm node manager
-eval "$(fnm env --use-on-cd)"
-
 # Eza
 alias ls="eza -l --icons"
+
+# Asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Go
 export GOPATH="$HOME/go"
