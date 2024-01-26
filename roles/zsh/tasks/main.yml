@@ -1,15 +1,15 @@
 ---
 - name: "[ zsh ] Run pre-install clean up"
-  shell: rm -rf ~/.oh-my-zsh ~/.zshrc ~/.p10k.zsh
+  shell: rm -rf ~/.oh-my-zsh ~/.zshrc 
 
 - name: "[ zsh ] Install oh-my-zsh"
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-- name: "[ zsh ] Install powerlevel10k"
-  shell: brew install romkatv/powerlevel10k/powerlevel10k
+- name: "[ zsh ] Install Starship"
+  shell: brew install starship
 
 - name: "[ zsh ] Source powerlevel10k"
-  shell: echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+  shell: echo "eval \"$(starship init zsh)\"" >>~/.zshrc
 
 - name: "[ zsh ] Restart zsh"
   shell: exec zsh
