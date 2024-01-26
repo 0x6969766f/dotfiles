@@ -8,8 +8,19 @@
 - name: "[ zsh ] Install Starship"
   shell: brew install starship
 
-- name: "[ zsh ] Source powerlevel10k"
-  shell: echo "eval \"$(starship init zsh)\"" >>~/.zshrc
+- name: "[ zsh ] Link .zshrc"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/zsh/files/.zshrc"
+    path: "~/.zshrc"
+    state: link
+    force: yes
+
+- name: "[ zsh ] Link starship.toml"
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/zsh/files/starship.toml"
+    path: "~/.config/starship.toml"
+    state: link
+    force: yes
 
 - name: "[ zsh ] Restart zsh"
   shell: exec zsh
